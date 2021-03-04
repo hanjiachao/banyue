@@ -1,0 +1,141 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='header clearfix'>
+    <image class='left' mode="widthFix" catchtap="show" src='../../image/service.png'></image>
+    <image class='right' mode="widthFix" src='{{messageUrl}}' bindtap='news'></image>
+    <view class='center' bindtap='search' wx:if="{{iphoneFlag}}">
+      <image class='left' mode='widthFix' src='../../image/search.png'></image>
+      <view class='ipt'>请输入搜索内容</view>
+    </view>
+  </view>
+  <swiper indicator-dots='{{indicatorDots}}' style='margin-top:90rpx;height:{{height}}' circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{activeColor}}" autoplay='{{autoPlay}}' interval='{{interval}}' duration='{{duration}}'>
+    <swiper-item wx:for="{{bannerList}}" wx:key="{{index}}">
+      <navigator url="/{{item.ba_link}}" hover-class="none">
+		<image mode='widthFix' class="slide-image" src='{{item.ba_path}}' bindload='imgH'></image>
+	  </navigator>
+    </swiper-item>
+  </swiper>
+  <view class='content'>
+    <view class='nav clearfix'>
+      <view bindtap='dynamic' class='item'>
+        <image mode='widthFix' src='../../image/list-icon_1.png'></image>
+        <text>招考公告</text>
+      </view>
+      <view bindtap='course' class='item' wx:if="{{iphoneFlag}}">
+        <image mode='widthFix' src='../../image/list-icon_2.png'></image>
+        <text>视频课程</text>
+      </view>
+      <view bindtap='mockExam' class='item'>
+        <image mode='widthFix' src='../../image/list-icon_3.png'></image>
+        <text>在线模考</text>
+      </view>
+      <view class='item' bindtap='daka'>
+        <image mode='widthFix' src='../../image/list-icon_4.png'></image>
+        <text>打卡</text>
+      </view>
+      <view bindtap='mistakes' class='item'>
+        <image mode='widthFix' src='../../image/list-icon_5.png'></image>
+        <text>错题本</text>
+      </view>
+      <view bindtap='exams' class='item'>
+        <image mode='widthFix' src='../../image/list-icon_6.png'></image>
+        <text>历年真题</text>
+      </view>
+      <view class='item' bindtap='issue'>
+        <image mode='widthFix' src='../../image/list-icon_7.png'></image>
+        <text>答疑解惑</text>
+      </view>
+      <view class='item' bindtap='tuition'>
+        <image mode='widthFix' src='../../image/list-icon_8.png'></image>
+        <text>赚学费</text>
+      </view>
+    </view>
+    <view class='panel clearfix'>
+      <image mode='widthFix' class='left' src='../../image/icon_9.png' bindtap='communitys'></image>
+      <view class='info' wx:for="{{community}}" data-ar_id='{{item.ar_id}}' wx:key="" bindtap='communitytap'>
+        <image mode='widthFix' class='icon' src='../../image/icon_11.png'></image>
+        <text>{{item.ar_title}}</text>
+      </view>
+    </view>
+    <view class='panel clearfix'>
+      <view class='title clearfix' bindtap='noticetap'>
+        <text class='left'>招考公告</text>
+        <text class='link right'>查看更多</text>
+      </view>
+      <image mode='widthFix' class='left' src='../../image/icon_10.png' bindtap='noticetap'></image>
+      <view class='info' wx:for="{{notice}}" wx:key="" data-ar_id='{{item.ar_id}}' bindtap='noticetDetails'>
+        <image mode='widthFix' class='icon' src='../../image/icon_12.png'></image>
+        <text>{{item.ar_title}}</text>
+      </view>
+    </view>
+    <view class='course' wx:if="{{iphoneFlag}}">
+      <image mode='widthFix' src='../../image/title1.png'></image>
+      <view class='boutique clearfix'>
+        <view class='item' wx:for='{{courseList1}}' wx:key='' data-v_id='{{item.v_id}}' bindtap='check1'>
+          <text class='details'>{{item.v_name}}</text>
+          <view class='money left' wx:if='{{isIos}}'>￥{{item.v_price}}</view>
+          <view class='numberBox right'>
+            <image mode='widthFix' src='../../image/icon1.png'></image>
+            <text>{{item.v_see_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='courseList'>
+        <view class='item clearfix' wx:for='{{courseList2}}' wx:key='' data-v_id='{{item.v_id}}' bindtap='check2'>
+          <view class='left'>
+            <image src='{{item.v_cover}}'></image>
+          </view>
+          <view class='info'>
+            <view class='title'>{{item.v_name}}</view>
+            <view class='number'>
+              <image mode='widthFix' src='../../image/icon5.png'></image>
+              <text class='people'>{{item.v_see_num}}</text>
+            </view>
+            <view class='money clearfix'>
+              <view class='team'>拼团价￥{{item.v_group_price}}</view>
+              <view class='unit'>单价￥{{item.v_price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='btn' bindtap='more'>{{text}}</view>
+    </view>
+  </view>
+</view>
+<!-- 客服遮罩层 -->
+<view class='shade1' catchtap='hide' style='display:{{disp}}'>
+  <view class='conts' catchtap='show' style='display:{{disp}}'>
+    <view class='phone'>
+      <view class='title'>联系电话</view>
+      <view class='number'>{{tel}}</view>
+    </view>
+    <view class='phone'>
+      <view class='title'>客服电话</view>
+      <view class='number'>{{service_tel}}</view>
+    </view>
+    <image class='Qrcode' bindtap="previewImage" mode='widthFix' src='{{qrcode}}'></image>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{flag}}'>
+  <view class='contents'>
+    <view class='title'>您还未绑定信息，请前去绑定信息</view>
+    <view class='btn clearfix'>
+      <view class='login left' bindtap='register'>绑定</view>
+      <view class='cancel right' bindtap='abolish'>取消</view>
+    </view>
+  </view>
+</view>
+<!-- 打卡弹窗 -->
+<view class='shade' hidden='{{dakaFlag}}'>
+  <view class='conts'>
+    <image class='bg' mode='widthFix' src='../../image/bg11.png'></image>
+    <view class='panel'>
+      <view class='title'>打卡成功</view>
+      <view class='test'>恭喜您、获得{{experience}}积分！</view>
+      <button wx:if='{{iphoneFlag}}' class='btn' bindtap='shareTo'>分享到朋友圈</button>
+    </view>
+    <view class='cancel' bindtap='close'>
+      <image mode='widthFix' src='../../image/cancel1.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,110 @@
+<!--pages/search-result/search-result.wxml-->
+<view class='header clearfix'>
+  <view class='imgBox right' bindtap='service'>
+    <image mode='widthFix' src='../../image/service.png'></image>
+  </view>
+  <view class='iptBox clearfix'>
+      <view class='img left'>
+        <image class='search' mode='widthFix' src='../../image/search1.png'></image>
+      </view>
+      <view class='img right'>
+        <image class='cancel' mode='widthFix' src='../../image/cancel.png'></image>
+      </view>
+      <view class='ipt'>
+        <input placeholder='请输入搜索内容' value='' placeholder-style='color:#fff;' bindconfirm="onShowtap"></input>
+      </view>
+    </view>
+</view>
+<view class='conts'>
+  <view class='tab'>
+	<view class='tab-item' data-current='2' bindtap='clickTab'>
+	  <text>精品课程</text>
+	  <view class='{{currentTab==2?"active":""}}'></view>
+	</view>
+    <view class='tab-item' data-current='1' bindtap='clickTab'>
+      <text>限时课程</text>
+      <view class='{{currentTab==1?"active":""}}'></view>
+    </view>
+	<view class='tab-item' data-current='0' bindtap='clickTab'>
+	  <text>火热拼团</text>
+	  <view class='{{currentTab==0?"active":""}}'></view>
+	</view>
+  </view>
+  <swiper current="{{currentTab}}" style='height:{{height}}px;' duration='300' bindchange='swiperTab'>
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <view class='list clearfix' wx:if="{{hideFlag1}}" wx:for='{{list1}}' wx:key='' data-v_id='{{item.v_id}}' data-type='拼团'  bindtap='goCourse1'>
+          <view class='imgBox left'>
+            <image class='bg' src='{{item.v_cover}}'></image>
+            <image wx:if="{{item.flag}}" class='mark' mode=' widthFix' src='../../image/mark.png'></image>
+          </view>
+          <view class='info'>
+            <view class='title'>{{item.v_name}}</view>
+            <view class='sort' wx:if='{{isIos}}'>
+              <text class='team'>拼团价￥{{item.v_group_price}}</text>
+              <text class='money'>单价￥{{item.v_price}}</text>
+            </view>
+            <view class='people'>
+              <image class='icon' src='../../image/icon5.png'></image>
+              <text class='number'>{{item.v_see_num}}</text>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{showFlag1}}" class='conts'>
+          <view class='img-box'>
+            <image mode='widthFix' src='../../image/results.png'></image>
+          </view>
+          <view class='text-results'>您查询的课程，暂时还没有，下次再来吧！</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <view class='list clearfix' wx:if="{{hideFlag2}}" wx:for='{{list2}}' wx:key='' data-v_id='{{item.v_id}}' data-type='免费' bindtap='goCourse2'>
+          <view class='imgBox left'>
+            <image class='bg' src='{{item.v_cover}}'></image>
+            <image wx:if="{{item.flag}}" class='mark' mode=' widthFix' src='../../image/mark.png'></image>
+          </view>
+          <view class='info'>
+            <view class='title'>{{item.v_name}}</view>
+            <view class='sort' wx:if='{{isIos}}'>免费</view>
+            <view class='people'>
+              <image class='icon' mode='widthFix' src='../../image/icon5.png'></image>
+              <text class='number'>{{item.v_see_num}}</text>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{showFlag2}}" class='conts'>
+          <view class='img-box'>
+            <image mode='widthFix' src='../../image/results.png'></image>
+          </view>
+          <view class='text-results'>您查询的课程，暂时还没有，下次再来吧！</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <view class='list clearfix' wx:if="{{hideFlag3}}" wx:for='{{list3}}' wx:key='' data-v_id='{{item.v_id}}' data-type='精品' bindtap='goCourse3'>
+          <view class='imgBox left'>
+            <image class='bg' src='{{item.v_cover}}'></image>
+            <image wx:if="{{item.flag}}" class='mark' mode=' widthFix' src='../../image/mark.png'></image>
+          </view>
+          <view class='info'>
+            <view class='title'>{{item.v_name}}</view>
+            <view class='sort' wx:if='{{isIos}}'>精品课程￥{{item.v_price}}</view>
+            <view class='people'>
+              <image class='icon' mode='widthFix' src='../../image/icon5.png'></image>
+              <text class='number'>{{item.v_see_num}}</text>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{showFlag3}}" class='conts'>
+          <view class='img-box'>
+            <image mode='widthFix' src='../../image/results.png'></image>
+          </view>
+          <view class='text-results'>您查询的课程，暂时还没有，下次再来吧！</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

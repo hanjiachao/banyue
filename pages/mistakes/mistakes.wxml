@@ -1,0 +1,66 @@
+<!--pages/mistakes/mistakes.wxml-->
+<view class='conts'>
+  <view class='head clearfix'>
+    <view class='classify' data-current='0' bindtap='clickTab'>
+      <text>历年真题</text>
+      <view class='{{currentTab==0?"active":""}}'></view>
+    </view>
+    <view class='classify' data-current='1' bindtap='clickTab'>
+      <text>在线模拟</text>
+      <view class='{{currentTab==1?"active":""}}'></view>
+    </view>
+  </view>
+  <view class='content' wx:if='{{currentTab==0?true:false}}'>
+    <view class='header'>
+      <text class='text'>本题库中错题</text>
+      <text class='num'>（共{{count}}题）</text>
+    </view>
+    <view class='list clearfix' wx:for='{{itemList}}' wx:key='' data-title='{{item.ca_name}}' data-count='{{item.count}}' data-ca_id='{{item.ca_id}}' bindtap='write'>
+      <view class='icon right'>
+        <image src='../../image/write.png'></image>
+      </view>
+      <view class='text'>
+        <view class='title'>{{item.ca_name}}</view>
+        <view class='test'>共{{item.count}}题</view>
+      </view>
+      
+    </view>
+  </view>
+  <view class='content' wx:if='{{currentTab==1?true:false}}'>
+    <view class='list wrap' wx:for='{{infoList}}' wx:key='' wx:for-item='info'>
+      <view class='title'>
+        <image src='../../image/icon18.png'></image>
+        <text>{{info.ca_name}}</text>
+      </view>
+      <view class='item'>
+        <image class='bg' mode='widthFix' src='{{info.ca_image}}'></image>
+        <view class='info'>
+          <view class='kind' wx:for='{{info.next_list}}' wx:key='' data-title='{{item.ca_name}}' data-count='{{item.error_count}}' data-ca_id='{{item.ca_id}}' data-third='{{item.is_third}}' bindtap='answer'>
+            <view class='icon'>
+              <image src='{{item.ca_image}}'></image>
+            </view>
+            <view class='msg'>{{item.ca_name}}</view>
+            <view style='color:#FFFFFF; font-size: 20rpx;'>{{item.ca_remark != ''?'（' + item.ca_remark + '）':''}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='mask' wx:if="{{flag}}">
+  <view class='content'>
+    <view class='title'>{{title}}</view>
+    <view class='info'>本章节错题数：{{number}}题</view>
+    <view class='checkbox'>
+      <checkbox-group bindchange="checkboxChange">
+        <label>
+          <checkbox value='{{remove}}'/>答题正确时将改错题移除错题库
+        </label>
+      </checkbox-group>
+    </view>
+    <view class='btnBox'>
+      <view class='btn' bindtap='close'>取消</view>
+      <view class='btn btn1' data-ca_id='{{ca_id}}' bindtap='start'>开始练习</view>
+    </view>
+  </view>
+</view>

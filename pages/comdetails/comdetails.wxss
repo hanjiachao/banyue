@@ -1,0 +1,54 @@
+/* pages/comdetails/comdetails.wxss */
+@import "/wxParse/wxParse.wxss";
+page{
+  background: #fff;
+}
+image{
+  width: 100%;
+}
+.conts{
+  padding: 40rpx 25rpx;
+}
+.conts .title{
+  font-size: 36rpx;
+  color: #222;
+  line-height: 50rpx;
+  text-align: left;
+  font-weight: 600;
+}
+.conts .info{
+  height: 40rpx;
+  line-height: 40rpx;
+  margin: 20rpx 0;
+}
+.conts .info .timer{
+  font-size: 24rpx;
+  color: #999;
+}
+.conts .info .mark{
+  width: 140rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  background: #FF4C4C;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+}
+.conts .section{
+  font-size: 28rpx;
+  color: #666;
+  line-height: 42rpx;
+  text-indent: 2em;
+  text-align: left;
+  margin-top: 50rpx;
+}
+.conts>image{
+  width: 100%;
+  margin-top: 60rpx;
+}
+.conts .titles{
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}

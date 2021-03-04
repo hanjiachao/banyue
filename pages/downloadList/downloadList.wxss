@@ -1,0 +1,25 @@
+/* pages/downloadList/downloadList.wxss */
+page{
+  background: #fff;
+}
+.conts{
+  padding: 0 25rpx;
+}
+.conts .list{
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .list .title{
+  color: #333;
+  font-size: 30rpx;
+}
+.conts .list .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .list .icon image{
+  width: 36rpx;
+  height: 35rpx;
+}

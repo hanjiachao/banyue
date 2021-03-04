@@ -1,0 +1,70 @@
+<!--pages/jotter/write/write.wxml-->
+<view class='conts' bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <view class='header clearfix'>
+    <view class='type left'>{{role}}</view>
+    <view class='number right'>{{index}}/{{count}}</view>
+  </view>
+  <view class='content'>
+    <view class='info'>{{su_question}}</view>
+    <!-- 单选题 -->
+    <view class='select' wx:if='{{flag1}}'>
+      <view class='options clearfix' data-select='A' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options1}}'></image>
+        </view>
+        <view class='text'>{{su_A}}</view>
+      </view>
+      <view class='options clearfix' data-select='B' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options2}}'></image>
+        </view>
+        <view class='text'>{{su_B}}</view>
+      </view>
+      <view class='options clearfix' data-select='C' wx:if='{{su_C==""?false:true}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options3}}'></image>
+        </view>
+        <view class='text'>{{su_C}}</view>
+      </view>
+      <view class='options clearfix' data-select='D' wx:if='{{su_D==""?false:true}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options4}}'></image>
+        </view>
+        <view class='text'>{{su_D}}</view>
+      </view>
+    </view>
+    <!-- 多选题 -->
+    <view class='select' wx:if='{{flag2}}'>
+      <view class='options clearfix' data-select='A' data-flagA='{{flagA}}'  catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options1}}'></image>
+        </view>
+        <view class='text'>{{su_A}}</view>
+      </view>
+      <view class='options clearfix' data-select='B' data-flagB='{{flagB}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options2}}'></image>
+        </view>
+        <view class='text'>{{su_B}}</view>
+      </view>
+      <view class='options clearfix' data-select='C' data-flagC='{{flagC}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options3}}'></image>
+        </view>
+        <view class='text'>{{su_C}}</view>
+      </view>
+      <view class='options clearfix' data-select='D' data-flagD='{{flagD}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options4}}'></image>
+        </view>
+        <view class='text'>{{su_D}}</view>
+      </view>
+    </view>
+    <view class='result' wx:if='{{flag3}}'>
+      <view class='text'>输入答案</view>
+      <view class='ipt'>
+        <input placeholder='请输入答案' placeholder-style='color:#B3B3B3;' value='{{answer}}' bindinput="getmessage"></input>
+      </view>
+    </view>
+  </view>
+</view>

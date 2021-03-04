@@ -1,0 +1,102 @@
+<!--pages/myTeam/myTeam.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='items' data-current='0' bindtap='clickTab'>
+      <view class='title'>
+        <text>全部</text>
+        <view class='{{currentTab==0?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='1' bindtap='clickTab' wx:if="{{isIos}}">
+      <view class='title'>
+        <text>待付款</text>
+        <view class='{{currentTab==1?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='2' bindtap='clickTab' wx:if="{{isIos}}">
+      <view class='title'>
+        <text>待成团</text>
+        <view class='{{currentTab==2?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='3' bindtap='clickTab' wx:if="{{isIos}}">
+      <view class='title'>
+        <text>已成团</text>
+        <view class='{{currentTab==3?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='4' bindtap='clickTab' wx:if="{{isIos}}">
+      <view class='title'>
+        <text>未成团</text>
+        <view class='{{currentTab==4?"active":""}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='lists' wx:for='{{allList}}' wx:key='' data-type='{{item.v_type}}' data-v_id='{{item.v_id}}' bindtap='liveDetails'>
+      <view class='head clearfix'>
+        <view class='timer left'>下单时间：{{item.add_time}}</view>
+        <view class='state right'>{{item.status}}</view>
+      </view>
+      <view class='item clearfix'>
+        <view class='img left'>
+          <image src='{{item.cover}}'></image>
+        </view>
+        <view class='info' wx:if='{{item.status == "已成团"?false:true}}'>
+          <view class='text'>{{item.name}}</view>
+          <view class='msg'>
+            <image src='../../image/icon5.png'></image>
+            <text>{{item.v_see_num}}</text>
+            <image src='../../image/calendar.png'></image>
+            <text>{{item.v_validity}}</text>
+            <text class='poor' wx:if='{{item.status == "已成团" || item.status == "未成团" ?false:true}}'>还差{{item.residue_num}}人成团</text>
+            <text class='poor' wx:if='{{item.status == "未成团"?true:false}}'>还差{{item.total_user}}人拼团</text>
+          </view>
+          <view class='money'>拼团价￥{{item.price}}</view>
+        </view>
+        <view class='info' wx:if='{{item.status == "已成团"?true:false}}'>
+          <view class='text'>{{item.name}}</view>
+          <view class='msg'>
+            <image src='../../image/icon5.png'></image>
+            <text>{{item.v_see_num}}</text>
+            <image src='../../image/calendar.png'></image>
+            <text>{{item.day_num}}</text>
+          </view>
+          <text class='money'>拼团价￥{{item.price}}</text>
+          <text class='money'>已满{{item.total_user}}人拼团</text>
+        </view>
+      </view>
+      <view class='foot clearfix' wx:if='{{item.status == "已成团"?true:false}}'>
+        <view class='number left'>付款时间：{{item.pay_time}}</view>
+        <view class='right'>
+          <view class='bgGreen' data-v_id='{{item.v_id}}' catchtap='watch'>观看课程</view>
+          <view class='bgGreen' data-v_id='{{item.v_id}}' catchtap='download'>素材下载</view>
+        </view>
+      </view>
+      <view class='foot clearfix'>
+        <view class='number left'>订单号：{{item.order_no}}</view>
+        <view class='btn right' wx:if='{{item.status == "待付款"?true:false}}'>
+          <view data-order_no='{{item.order_no}}' catchtap='payment'>付款</view>
+        </view>
+        <view class='btn right' wx:if='{{item.status == "待成团"?true:false}}'>
+          <button catchtap='share' open-type='share' hover-class='none'>分享</button>
+        </view>
+      </view>
+      <view class='foot clearfix' wx:if='{{item.status == "未成团"?true:false}}'>
+        <view class='number left'>拼团失败：{{item.reason}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 苹果机型购买流程 -->
+<cover-view class='iphoneStyle' wx:if='{{iphoneFlag}}' catchtap='iphone'>
+  <cover-view class='content' catchtap='iphoneSon'>
+    <!-- <cover-view class='title'>你的手机是iOS系统，请扫描下方二维码添加客服微信进行线下交易</cover-view> -->
+    <cover-image bindtap="previewImage" src='{{qrcode}}'></cover-image>
+  </cover-view>
+</cover-view>
+<!-- 分享回到首页 -->
+<cover-view class='homePage' wx:if='{{homePageFlag}}' bindtap='homePage'>
+  <cover-image src='../../image/icon_1.png'></cover-image>
+  <cover-view class='text'>首页</cover-view>
+</cover-view>

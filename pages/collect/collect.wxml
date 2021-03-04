@@ -1,0 +1,122 @@
+<!--pages/collect/collect.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='items' data-current='0' bindtap='clickTab'>
+      <view class='title'>
+        <text>全部课程</text>
+        <view class='{{currentTab==0?"active":""}}'></view>
+      </view>
+      <view class='icon' bindtap='show'>
+        <image src='../../image/drop-down.png'></image>
+      </view>
+    </view>
+    <view class='items' data-current='1' bindtap='clickTab'>
+      <view class='title'>
+        <text>历年真题</text>
+        <view class='{{currentTab==1?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='2' bindtap='clickTab'>
+      <view class='title'>
+        <text>在线模考</text>
+        <view class='{{currentTab==2?"active":""}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class='wrap'>
+    <view class='list clearfix' wx:if='{{currentTab==0?true:false}}' wx:for='{{courseList}}' wx:key='' data-type='{{item.v_type}}' data-v_id='{{item.v_id}}' bindtap='goCourse'>
+      <view class='imgBox left'>
+        <image class='bg' src='{{item.v_cover}}'></image>
+        <text class='icon'>{{item.v_label}}</text>
+      </view>
+      <view class='info'>
+        <view class='title'>{{item.v_name}}</view>
+        <view class='msg'>
+          <view class='people'>
+            <view class='iconImg'>
+              <image src='../../image/icon5.png'></image>
+            </view>
+            <text>{{item.v_see_num}}</text>
+          </view>
+          <view class='code'>
+            <view class='iconImg'>
+              <image src='../../image/code.png'></image>
+            </view>
+            <text>{{item.v_buy_num}}</text>
+          </view>
+          <view class='timer'  wx:if='{{item.v_type!="拼团"?true:false}}'>
+            <view class='iconImg'>
+              <image src='../../image/calendar.png'></image>
+            </view>
+            <text>{{item.v_validity}}</text>
+          </view>
+          <view class='team'  wx:if='{{item.v_type=="拼团"?true:false}}'>还差{{item.residue_num}}人成团</view>
+        </view>
+        <view class='money'  wx:if='{{(item.v_type=="拼团"?true:false) && isIos}}'>
+          <text class='text1'>拼团价￥{{item.v_group_price}}</text>
+          <text class='text2'>单价￥{{item.v_price}}</text>
+        </view>
+        <view class='money' wx:if='{{(item.v_type=="精品"?true:false) && isIos}}'>
+          <text class='text1'>精品课程￥{{item.v_price}}</text>
+        </view>
+        <view class='money' wx:if='{{(item.v_type=="免费"?true:false) && isIos}}'>
+          <text class='text1'>免费课程</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if='{{currentTab==1?true:false}}' class="lists {{item.open ? 'show' : ''}} clearfix" data-ca_id='{{item.ca_id}}' wx:for="{{yearsList}}" wx:key="" bindtap='unwind'>
+      <view class='content clearfix'>
+        <view class='title left'>
+          <text class='text'>{{item.ca_name}}</text>
+          <text class='msg'>{{item.count}}套真题</text>
+        </view>
+        <view class='icon right'>
+          <image src='{{urlImg}}'></image>
+        </view>
+      </view>
+      <view class='panel'>
+        <view class='items claerfix' wx:for="{{item.next_list}}" wx:key="" data-type='历年真题' data-cate_id='{{item.ca_id}}' bindtap='details'>
+          <view class='title left'>{{item.ca_name}}</view>
+          <view class='imgBox right'>
+            <image src='../../image/write.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  wx:if='{{currentTab==2?true:false}}' class="lists clearfix" data-cate_id='{{item.cate_id}}' data-type='在线模考' wx:for="{{onlineList}}" wx:key=""  bindtap='details'>
+      <view class='content clearfix'>
+        <view class='title left'>
+          <text class='text'>{{item.first_name}}</text>
+          <text class='msg'>{{item.cate_name}}{{item.third_name}}</text>
+        </view>
+        <view class='icon right'>
+          <image src='../../image/icon8.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 筛选遮罩 -->
+<view class='shade'  catchtap='hide' style='display:{{disp}}'>
+  <view class='warp'>
+    <view class='head'>全部课程</view>
+    <view class='items clearfix' data-type='0' bindtap='select'>
+      <view class='text left {{typeid==0?"active":""}}'>火热拼团</view>
+      <view class='icon right' wx:if="{{typeid==0?true:false}}">
+        <image src='../../image/face.png'></image>
+      </view>
+    </view>
+    <view class='items clearfix' data-type='1' bindtap='select'>
+      <view class='text left {{typeid==1?"active":""}}'>精品课程</view>
+      <view class='icon right' wx:if="{{typeid==1?true:false}}">
+        <image src='../../image/face.png'></image>
+      </view>
+    </view>
+    <view class='items clearfix' data-type='2' bindtap='select'>
+      <view class='text left {{typeid==2?"active":""}}'>免费课程</view>
+      <view class='icon right' wx:if="{{typeid==2?true:false}}">
+        <image src='../../image/face.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

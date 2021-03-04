@@ -1,0 +1,220 @@
+/* pages/mistakes/mistakes.wxss */
+.conts{
+  padding: 0 25rpx;
+  background: #fff;
+}
+.conts .head{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #0BC99D;
+  height: 90rpx;
+  line-height: 85rpx;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.conts .content{
+  margin-top: 90rpx; 
+}
+.conts .head .classify{
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+.conts .head .classify .active{
+  position: absolute;
+  bottom: 10rpx;
+  left: 120rpx;
+  width: 118rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: #fff;
+}
+.conts .header{
+  height: 110rpx;
+  line-height: 110rpx;
+}
+.conts .header .text{
+  color: #333333;
+  font-size: 32rpx;
+}
+.conts .header .num{
+  color: #999999;
+  font-size: 28rpx;
+}
+.conts .list{
+  height: 155rpx;
+  margin-top: 4rpx;
+  border-top: 2rpx solid #DBDBDB;
+}
+.conts .list .text{
+  margin-right:50rpx;
+}
+.conts .list .text .title{
+  width: 100%;
+  display: block !important;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.conts .list .text .test{
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.conts .list .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .list .icon image{
+  width: 40rpx;
+  height: 35rpx;
+}
+.conts .content .list{
+  margin-top: 10rpx;
+}
+.conts .content .wrap{
+  height: auto;
+  border: 0;
+}
+.conts .content .list .title{
+  display: flex;
+  align-items: center;
+}
+.conts .content .list .title image{
+  width: 6rpx;
+  height: 35rpx;
+}
+.conts .content .list .title text{
+  color: #333333;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin-left: 25rpx;
+}
+.conts .content .list .item{
+  position: relative;
+  margin-top: 20rpx;
+}
+.conts .content .list .item .bg{
+  width: 100%;
+}
+.conts .content .list .item .info{
+  position: absolute;
+  top: 70rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+.conts .content .list .item .info .kind{
+  width: 33.33%;
+  vertical-align: top;
+  display: inline-block;
+}
+.conts .content .list .kind .icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+.conts .content .list .kind .icon image{
+  width: 100%;
+  height: 100%;
+}
+.conts .content .list .kind .msg{
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  width:220rpx;
+  margin:0 auto;
+}
+.conts .content .list .kind .text{
+  color: #fff;
+  font-size: 24rpx;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6)
+}
+.mask .content{
+  background: #fff;
+  width: 600rpx;
+  margin: 315rpx auto 0;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.mask .content .title{
+  text-align: center;
+  color: #333333;
+  font-size: 32rpx;
+  margin: 40rpx 80rpx 30rpx;
+}
+.mask .content .info{
+  color: #999999;
+  font-size: 28rpx;
+  text-align: center;
+}
+.mask .content .checkbox{
+  color: #999999;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  line-height: 26rpx;
+}
+.mask .content .checkbox checkbox{
+  margin-right: 10rpx;
+}
+checkbox .wx-checkbox-input{
+  width: 26rpx; /* 背景的宽 */
+  height: 26rpx; /* 背景的高 */
+  border: 1rpx solid #999999;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 1rpx solid #0BC99D;
+  background: #0BC99D;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  width: 26rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 26rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 26rpx;
+  text-align: center;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.mask .content .btnBox{
+  margin-top: 45rpx;
+  border-top: 2rpx solid #DDDDDD;
+}
+.mask .content .btnBox .btn{
+  width: 50%;
+  display: inline-block;
+  font-size: 36rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  text-align: center;
+  border-right: 2rpx solid #fff;
+  box-sizing: border-box;
+}
+.mask .content .btnBox .btn:last-child{
+  border: 0;
+}
+.mask .content .btnBox .btn1{
+  color: #fff;
+  background: #0BC99D;
+}

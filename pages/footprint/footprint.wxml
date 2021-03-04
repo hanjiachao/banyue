@@ -1,0 +1,4 @@
+<!--pages/footprint/footprint.wxml-->
+<view class='header'>
+  <image class='bg' mode='widthFix' src='{{userImg}}'></image>
+</view>

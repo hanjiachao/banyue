@@ -1,0 +1,241 @@
+/* pages/collect/collect.wxss */
+page{
+  background: #fff;
+  height: 100%;
+}
+.conts{
+  height: 100%;
+}
+.conts .header{
+  height: 90rpx;
+  background: #0BC99D;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.conts .header .items{
+  display: inline-block;
+  width: 33.33%;
+  text-align: center;
+  line-height: 90rpx;
+}
+.conts .header .items .title{
+  font-size: 30rpx;
+  display: inline-block;
+  position: relative;
+}
+.conts .header .items .icon{
+  width: 25rpx;
+  height: 15rpx;
+  display: inline-block;
+  margin-left: 15rpx;
+}
+.conts .header .items .icon image{
+  width: 100%;
+  height: 100%;
+}
+.conts .header .items .active{
+  position: absolute;
+  bottom: 15rpx;
+  left: 0rpx;
+  width: 118rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: #fff;
+}
+.conts swiper{
+  position: fixed;
+  top: 90rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+.conts .list{
+  padding: 30rpx 0;
+  margin: 0 25rpx;
+  border-bottom: 2rpx solid #CCCCCC;
+}
+.conts .wrap{
+  margin-top: 90rpx;
+}
+.conts swiper swiper-item scroll-view{
+  width: 100%;
+  height: 93%;/*动态高度*/
+}
+.conts .list .imgBox{
+  position: relative;
+  width: 125rpx;
+  height: 125rpx;
+}
+.conts .list .imgBox .bg{
+  width: 100%;
+  height: 100%;
+}
+.conts .list .imgBox .icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70rpx;
+  text-align: center;
+  background: #FF4C4C;
+  border-radius: 7rpx 0rpx 20rpx 0rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 30rpx;
+}
+.conts .list .info{
+  margin-left: 155rpx;
+}
+.conts .list .info .title{
+  color: #000000;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.conts .list .msg >view{
+  display: inline-block;
+}
+.conts .list .msg .iconImg{
+  display: inline-block;
+  margin: 0 7rpx 0 30rpx;
+}
+.conts .list .msg .people .iconImg{
+  margin-left: 0;
+}
+.conts .list .msg .iconImg image{
+  width: 35rpx;
+  height: 25rpx;
+}
+.conts .list .msg text{
+  color: #808080;
+  font-size: 26rpx;
+}
+.conts .list .msg .team{
+  color: #FF5D5D;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+}
+.conts .list .money .text1{
+  color: #FF4C4C;
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+.conts .list .money .text2{
+  margin-left: 25rpx;
+  color: #808080;
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.conts .lists .content{
+  padding: 0 25rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .lists .content .title{
+  height: 100%;
+}
+.conts .lists .content .title .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .show .content .title .text{
+  color: #0BC99D;
+}
+.conts .lists .content .title .msg{
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 25rpx;
+}
+.conts .content .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .content .icon image{
+  width: 20rpx;
+  height: 35rpx;
+}
+.conts .show .content .icon image{
+  transform: rotate(90deg)
+}
+.panel{
+  background: #F2F3F4;
+  padding: 0 25rpx;
+  height: 0rpx;
+  overflow: hidden;
+}
+/* 展开 */
+.show .panel{
+  height: auto;
+}
+.panel .items{
+  padding: 0 95rpx;
+  height: 80rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.panel .items .title{
+  width: 470rpx;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.panel .items .imgBox{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.panel .items .imgBox image{
+  width: 40rpx;
+  height: 35rpx;
+}
+.shade{
+  background:rgba(0,0,0,0.5);    
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.shade .warp{
+  background: #fff;
+  height: 360rpx;
+  padding: 0 25rpx;
+}
+.shade .warp .head{
+  text-align: center;
+  color: #333333;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.shade .warp .items{
+  height: 85rpx;
+  line-height: 85rpx;
+  padding: 0 25rpx;
+  border-top: 4rpx solid #CCCCCC;
+}
+.shade .warp .items .text{
+  color: #666666;
+  font-size: 26rpx;
+}
+.shade .warp .items .active{
+  color: #0BC99D;
+}
+.shade .warp .items .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.shade .warp .items .icon image{
+  width: 30rpx;
+  height: 20rpx;
+}

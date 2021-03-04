@@ -1,0 +1,91 @@
+/* pages/parsing/parsing.wxss */
+.conts .head{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #fff;
+  height: 85rpx;
+  line-height: 85rpx;
+  padding: 0 25rpx;
+}
+.conts .head .text{
+  color: #333333;
+  font-size: 28rpx;
+}
+.conts .head .num{
+  height: 35rpx;
+  line-height: 35rpx;
+  background: #E6E6E6;
+  border-radius: 18rpx;
+  font-size: 24rpx;
+  color: #333;
+  padding: 0 20rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.conts .head .num text{
+  color: #0BC99D;
+}
+.conts .content{
+  margin-top: 85rpx;
+  padding: 40rpx 25rpx 120rpx;
+}
+.conts .content .question{
+  color: #333333;
+  font-size: 30rpx;
+  font-weight:500;
+  line-height: 50rpx;
+}
+.conts .content .title{
+  color: #BFBFBF;
+  font-size: 28rpx;
+  margin: 40rpx 0;
+}
+.conts .content .reference{
+  color: #787878;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  text-indent: 2em;
+}
+.conts .content .standard{
+  color: #787878;
+  font-size: 28rpx;
+}
+.conts .content .ipt{
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #0BC99D;
+  border-radius: 40rpx;
+  padding: 0 40rpx;
+}
+.conts .content .ipt .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .content .ipt .icon image{
+  width: 22rpx;
+  height: 40rpx;
+}
+.conts .content .ipt input{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #787878;
+  font-size: 32rpx;
+  text-align: center;
+}
+.conts .submit{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0BC99D;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}

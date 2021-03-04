@@ -1,0 +1,235 @@
+/* pages/commission/commission.wxss */
+@import "../../../wxParse/wxParse.wxss";
+page{
+  background: #fff
+}
+.conts .header{
+  background: #0EE6B3;
+  padding: 25rpx;
+}
+.conts .header .top text{
+  float: right;
+  background: #fff;
+  color: #00B087;
+  font-size: 24rpx;
+  padding: 10rpx 25rpx;
+  border-radius: 25rpx;
+}
+.conts .header .content{
+  width: 500rpx;
+  margin: 35rpx auto;
+}
+.conts .header .content .item{
+  width: 50%;
+  float: left;
+  border-right: 2rpx solid #FFFFFF;
+  box-sizing: border-box;
+  border-color: rgba(255, 255, 255, .8)
+}
+.conts .header .content .item:last-child{
+  border: 0;
+  float: right;
+  text-align: right;
+}
+.conts .header .item .title .text{
+  color: #FFFFFF;
+  font-size: 28rpx;
+}
+.conts .header .item .title .btn{
+  display: inline-block;
+  margin-left: 25rpx;
+  color: #fff;
+  font-size: 20rpx;
+  border: 2rpx solid #fff;
+  border-radius: 18rpx;
+  width: 70rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.conts .header .item .num{
+  color: #FFFFFF;
+  font-size: 48rpx;
+  margin-top: 30rpx;
+}
+.conts .header .rule{
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  margin: 40rpx 0 90rpx;
+  opacity: 0.8;
+}
+.conts .panel{
+  background: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+  margin-top: -70rpx;
+}
+.conts .panel .title{
+  height: 105rpx;
+  line-height: 105rpx;
+}
+.conts .panel .title .icon,.return{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .panel .title .icon image{
+  width: 8rpx;
+  height: 36rpx;
+}
+.conts .panel .title .return image{
+  width: 15rpx;
+  height: 28rpx;
+  margin-right: 25rpx;
+}
+.conts .panel .title .text{
+  color: #333333;
+  font-size: 32rpx;
+  margin: 0 25rpx;
+}
+.conts .panel .item{
+  margin: 0 25rpx;
+  height: 105rpx;
+  line-height: 105rpx;
+  border-top: 2rpx solid #F2F2F2;
+}
+.conts .panel .item .test{
+  color: #333333;
+  font-size: 28rpx;
+}
+.conts .panel .item .money{
+  color: #E75D50;
+  font-size: 36rpx;
+}
+.conts .panel .details{
+  border-top: 20rpx solid #F2F3F4;
+}
+.conts .panel .details .list{
+  margin: 0 25rpx;
+  padding: 30rpx 0;
+  line-height: 50rpx;
+  border-top: 2rpx solid #F2F2F2;
+}
+.conts .panel .details .list .top .user{
+  color: #333333;
+  font-size: 26rpx;
+}
+.conts .panel .details .list .money{
+  color: #E75D50;
+  font-size: 26rpx;
+}
+.conts .details .list .timer{
+  color: #333333;
+  font-size: 26rpx;
+}
+.conts .details .list .info{
+  color: #333333;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.shade{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background:rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.shade .wrap{
+  width: 480rpx;
+  position: absolute;
+  top: 300rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.shade .wrap .content{
+  background: #0BDBAB;
+  border-radius: 10rpx;
+  padding: 65rpx 35rpx 55rpx;
+  box-shadow:0px 4rpx 19rpx 1rpx #0CF0BA;
+}
+.shade .wrap .content .ipt{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.shade .wrap .content .ipt .iptBox{
+  background: #fff;
+  width: 285rpx;
+  border-radius: 6rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #CCCCCC;
+  height: 100%;
+}
+.shade .wrap .content .ipt .iptBox input{
+  height: 100%;
+}
+.shade .wrap .content .ipt .text{
+  color: #fff;
+  font-size: 26rpx;
+  margin-left: 15rpx;
+  line-height: 80rpx;
+}
+.shade .wrap .content .info{
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 25rpx;
+}
+.shade .wrap .content .btn{
+  width: 255rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  background: #04C497;
+  color: #FFFFFF;
+  font-size: 26rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  margin: 65rpx auto 0;
+}
+.shade .wrap .close{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 40rpx auto 0
+}
+.shade .wrap .close image{
+  width: 100%;
+  height: 100%;
+}
+.shade .panel{
+  width: 625rpx;
+  margin: 125rpx auto 0;
+  position: relative;
+}
+.shade .panel .bg{
+  width: 100%;
+}
+.shade .panel .info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 40rpx;
+}
+.shade .panel .info .title{
+  color: #333333;
+  font-size: 32rpx;
+}
+.shade .panel .info .item{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-align: left;
+  margin-top: 35rpx;
+}
+.shade .icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 60rpx auto 0;
+}
+.shade .icon image{
+  width: 100%;
+  height: 100%;
+}

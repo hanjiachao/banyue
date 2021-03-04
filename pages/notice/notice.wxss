@@ -1,0 +1,111 @@
+/* pages/notice/notice.wxss */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160rpx;
+  text-align: center;
+  background: #0BC99D;
+  padding: 20rpx 25rpx;
+  box-sizing: border-box;
+  z-index: 999;
+}
+.header .site{
+  height: 70rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.header .site text{
+  font-size: 30rpx;
+  color: #fff;
+}
+.header .site image{
+  width: 17rpx;
+  height: 15rpx;
+  margin-left: 20rpx;
+}
+.header .sort{
+  color: #fff;
+  font-size: 30rpx;
+  text-align: left;
+}
+.header .sort .item{
+  margin-right: 70rpx;
+  display: inline-block;
+  height: 80rpx;
+  position: relative;
+}
+.header .sort .item .active{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50rpx;
+  height: 6rpx;
+  background: #fff;
+  z-index: 9999;
+}
+.conts{
+  margin-top: 170rpx;
+  padding: 25rpx 25rpx 55rpx;
+}
+.conts .list{
+  background: #fff;
+  margin-bottom: 25rpx;
+  padding: 40rpx 20rpx;
+  position: relative;
+  border-radius: 6rpx;
+}
+.conts .list .mark{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  background: #FF4C4C;
+  width: 80rpx;
+  line-height: 50rpx;
+  border-radius:6rpx 0rpx 20rpx 0rpx;
+  text-align: center;
+}
+.conts .list .title{
+  font-size: 28rpx;
+  color: #4D4D4D;
+  text-indent: 2rem;
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  padding-bottom: 25rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+}
+.conts .list .footer{
+  line-height: 70rpx;
+}
+.conts .list .people{
+  font-size: 24rpx;
+  color: #FF4C4C;
+}
+.conts .list .timer{
+  font-size: 24rpx;
+  color: #666666;
+}
+.conts .list .timer image{
+  width: 34rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.popup{
+  position: fixed;
+  width:250rpx;
+  height:80rpx;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 10rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+}

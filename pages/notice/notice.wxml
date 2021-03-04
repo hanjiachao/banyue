@@ -1,0 +1,33 @@
+<!--pages/notice/notice.wxml-->
+<view class='header'>
+  <view class='site' bindtap='site'>
+    <text>{{city}}</text>
+    <image mode='widthFix' src='../../image/arrows.png'></image>
+  </view>
+  <view class='sort'>
+    <scroll-view scroll-x style="width: 100%;white-space: nowrap;">
+      <view class='item' bindtap='click'  data-id='0' data-ca_id=''>
+        <text>全部</text>
+        <view class="{{currentTab==0?'active':''}}"></view>
+      </view>
+      <view class='item' wx:for='{{classify}}' wx:key='' data-id='{{index + 1}}' data-ca_id='{{item.ca_id}}' bindtap='click'>
+        <text>{{item.ca_name}}</text>
+        <view class="{{currentTab==index+1?'active':''}}"></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='conts'>
+  <view class='list' wx:for='{{infoList}}' wx:key='' data-ar_id='{{item.ar_id}}' bindtap='comdetails'>
+    <view class='mark'>{{item.ar_label}}</view>
+    <view class='title'>{{item.ar_title}}</view>
+    <view class='footer clearfix'>
+      <view class='people left'>招考人数:{{item.ar_browse}}</view>
+      <view class='timer right'>
+        <image mode='widthFix' src='../../image/calendar.png'></image>
+        <text>{{item.date}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='popup' wx:if='{{popup}}'>已加载全部</view>

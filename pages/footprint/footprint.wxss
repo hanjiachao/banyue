@@ -1,0 +1,10 @@
+/* pages/footprint/footprint.wxss */
+page{
+  background: #fff;
+}
+.header{
+  position: relative;
+}
+.header .bg{
+  width: 100%;
+}

@@ -1,0 +1,42 @@
+/* pages/profile/profileInfo/profileInfo.wxss */
+.conts .header{
+  padding: 0 25rpx;
+  background: #fff;
+  height: 75rpx;
+  line-height: 75rpx;
+  color: #FF4C4C;
+  font-size: 28rpx;
+}
+.conts .items{
+  height: 106rpx;
+  line-height: 106rpx;
+  background: #fff;
+  padding: 0 25rpx;
+  margin-bottom: 4rpx;
+}
+.conts .items .title{
+  color: #333333;
+  font-size: 32rpx;
+}
+.conts .items .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .items .icon image{
+  width: 15rpx;
+  height: 25rpx;
+}
+.conts .items .ipt{
+  margin: 0 70rpx;
+  height: 100%;
+  color: #959595;
+  font-size: 28rpx;
+  text-align: right;
+}
+.conts .profession{
+  margin-top: 20rpx;
+}
+.conts .school{
+  margin-top: 20rpx;
+}

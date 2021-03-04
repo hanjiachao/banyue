@@ -1,0 +1,76 @@
+<!--pages/myCourses/myCourses.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='items' data-current='0' bindtap='clickTab'>
+      <view class='title'>
+        <text>全部</text>
+        <view class='{{currentTab==0?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='1' bindtap='clickTab' wx:if="{{isIos}}">
+      <view class='title'>
+        <text>待付款</text>
+        <view class='{{currentTab==1?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='2' bindtap='clickTab' wx:if="{{isIos}}">
+      <view class='title'>
+        <text>已付款</text>
+        <view class='{{currentTab==2?"active":""}}'></view>
+      </view>
+    </view>
+    <view class='items' data-current='3' bindtap='clickTab'>
+      <view class='title'>
+        <text>已取消</text>
+        <view class='{{currentTab==3?"active":""}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='lists' wx:for='{{allList}}' wx:key='' data-type='{{item.v_type}}' data-v_id='{{item.v_id}}' bindtap='liveDetails' wx:if="{{!(item.or_status == '待支付' & !isIos)}}">
+      <view class='head clearfix' wx:if="{{isIos}}">
+        <view class='timer left'>下单时间：{{item.or_add_time}}</view>
+        <view class='state right'>{{item.or_status}}</view>
+      </view>
+      <view class='item clearfix'>
+        <view class='img left'>
+          <image src='{{item.v_cover}}'></image>
+        </view>
+        <view class='info'>
+          <view class='text'>{{item.v_name}}</view>
+          <view class='msg'>
+            <image src='../../image/icon5.png'></image>
+            <text>{{item.v_see_num}}</text>
+            <image src='../../image/calendar.png'></image>
+            <text>{{item.v_validity}}</text>
+          </view>
+		  <view class="end" wx:if="{{item.or_status == '已支付'}}">到期时间:{{item.or_end_time}}</view>
+          <view class='money' wx:if="{{isIos}}">精品课程￥{{item.v_price}}</view>
+        </view>
+      </view>
+      <view class='foot clearfix'>
+        <view class='number left' wx:if="{{isIos}}">订单号：{{item.or_order_no}}</view>
+        <view class='btn right'>
+          <view wx:if='{{item.or_status == "待支付"?true:false}}'>
+            <view class='cancel' data-order_no='{{item.or_order_no}}' catchtap='abolish'>取消</view>
+            <view class='bgGreen' data-order_no='{{item.or_order_no}}' catchtap='payment'>付款</view>
+          </view>
+          <view wx:if='{{item.or_status == "已支付"?true:false}}'>
+            <view class='bgGreen' data-v_id='{{item.v_id}}' catchtap='watch'>观看课程</view>
+            <view class='bgGreen' data-v_id='{{item.v_id}}' catchtap='download'>素材下载</view>
+          </view>
+          <!-- <view wx:if='{{item.or_status == "已取消"?true:false}}'>
+            <view class='bgGreen' data-order_no='{{item.or_order_no}}' catchtap='again'>重新付款</view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 苹果机型购买流程 -->
+<cover-view class='iphoneStyle' wx:if='{{iphoneFlag}}' catchtap='iphone'>
+  <cover-view class='content' catchtap='iphoneSon'>
+    <!-- <cover-view class='title'>你的手机是iOS系统，请扫描下方二维码添加客服微信进行线下交易</cover-view> -->
+    <cover-image bindtap="previewImage" src='{{qrcode}}'></cover-image>
+  </cover-view>
+</cover-view>

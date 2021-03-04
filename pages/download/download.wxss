@@ -1,0 +1,22 @@
+/* pages/download/download.wxss */
+page{
+  background: #fff;
+}
+.conts{
+  padding: 0 25rpx;
+}
+.list{
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.list .title{
+  color: #333333;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.list .timer{
+  color: #999999;
+}

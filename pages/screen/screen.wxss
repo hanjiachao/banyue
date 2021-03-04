@@ -1,0 +1,109 @@
+/* pages/screen/screen.wxss */
+page,.conts{
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.conts .margins{
+  margin-bottom: 120rpx;
+}
+.conts .header .title{
+  background: #fff;
+  padding: 0 25rpx;
+  height: 80rpx;
+  color: #222222;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  font-weight: 600;
+}
+.conts .header .title .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .header .title .icon image{
+  height: 32rpx;
+  width: 32rpx;
+}
+.conts .header .content{
+  padding: 20rpx 25rpx;
+  background: #F8F8F8;
+  min-height: 90rpx;
+}
+.conts .header .content scroll-view{
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.conts .header .content .list{
+  color: #8A8A8A;
+  font-size: 24rpx;
+  line-height: 55rpx;
+  height: 55rpx;
+  background: #fff;
+  padding: 0 25rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.conts .header .content .list .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+}
+.conts .header .content .list .icon image{
+  width: 16rpx;
+  height: 16rpx;
+}
+.conts .panel{
+  background: #fff;
+  padding: 30rpx 25rpx 0rpx;
+}
+.conts .panel .title{
+  color: #222222;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.conts .panel .items{
+  margin-top: 30rpx;
+}
+.conts .panel .items:first-child{
+  margin-top: 0;
+}
+.conts .panel .items .wrap{
+  width: 25%;
+  margin-top: 30rpx;
+  display: inline-block;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.conts .panel .items .info{
+  position: relative;
+  background: #F8F8F8;
+  color: #666666;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.conts .panel .items .info image{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33rpx;
+}
+.conts .panel .items .info .active{
+  display: none;
+}
+.conts button{
+  background: #0BC99D;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,78 @@
+<!--pages/tuition/apply/apply.wxml-->
+<view class='perch'></view>
+<view class='conts'>
+  <view class='header'>填写资料由平台审核</view>
+  <view class='form'>
+    <view class='item clearfix'>
+      <view class='title left'>姓名</view>
+      <view class='ipt'>
+        <input placeholder='请输入' placeholder-style='color:#CCCCCC;' bindinput="getName"></input>
+      </view>
+    </view>
+    <view class='item clearfix'>
+      <view class='title left'>年龄</view>
+      <view class='ipt'>
+        <input placeholder='请输入' placeholder-style='color:#CCCCCC;' bindinput="getAge"></input>
+      </view>
+    </view>
+    <view class='item clearfix'>
+      <view class='title left'>专业</view>
+      <view class='ipt'>
+        <input placeholder='请输入' placeholder-style='color:#CCCCCC;' bindinput='getMajor'></input>
+      </view>
+    </view>
+    <view class='item clearfix'>
+      <view class='title left'>毕业院校</view>
+      <view class='ipt'>
+        <input placeholder='请输入' placeholder-style='color:#CCCCCC;' bindinput="getacademy"></input>
+      </view>
+    </view>
+    <view class='item clearfix'>
+      <view class='title left'>毕业时间</view>
+      <view class='ipt'>
+        <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="gettimer">
+	{{dateValue == '' ? '请选择时间' : dateValue}}
+</picker>
+      </view>
+    </view>
+    <view class='item clearfix'>
+      <view class='title left'>电话</view>
+      <view class='ipt'>
+        <input placeholder='请输入' placeholder-style='color:#CCCCCC;' bindinput="getPhone"></input>
+      </view>
+    </view>
+    <view class='item clearfix'>
+      <view class='title left'>职业</view>
+      <view class='ipt'>
+        <input placeholder='请输入' placeholder-style='color:#CCCCCC;' bindinput="profession"></input>
+      </view>
+    </view>
+    <view class='panel'>
+      <view class='radios'>
+        <text>是否报考过公考？</text>
+        <radio-group class="radio-group" bindchange="radioChange1">
+            <label class="radio" wx:for="{{items1}}" wx:key="">
+                <radio value="{{item.name}}"/>{{item.value}}
+            </label>
+        </radio-group>
+      </view>
+      <view class='radios'>
+        <text>是否报考过教师？</text>
+        <radio-group class="radio-group" bindchange="radioChange2">
+            <label class="radio" wx:for="{{items2}}" wx:key="">
+                <radio value="{{item.name}}"/>{{item.value}}
+            </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <button class='btn' size='default' bindtap='submit'>提交</button>
+</view>
+<!-- 提交成功遮罩 -->
+<view class='shade' hidden="{{flag}}">
+  <view class='content'>
+    <view class='title'>恭喜您提交成功！</view>
+    <view class='text'>请耐心等待平台审核</view>
+    <view class='footer' bindtap='hide'>好的</view>
+  </view>
+</view>

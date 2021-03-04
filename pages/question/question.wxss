@@ -1,0 +1,79 @@
+/* pages/question/question.wxss */
+.content{
+  background: #F2F3F4;
+  padding: 30rpx;
+  
+}
+.content .item{
+  background: #fff;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  padding: 30rpx 85rpx;
+}
+.content .item:first-child{
+  margin-top: 0;
+}
+.content .item .img{
+  width: 145rpx;
+  height: 135rpx;
+}
+.content .item .text{
+  margin-left: 90rpx;
+}
+.content .item .text .title{
+  color: #323232;
+  font-size: 36rpx;
+  line-height: 60rpx;
+  font-weight: bold;
+}
+.content .item .subTitle{
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+.content .item .subTitle text{
+  color: #FF3000;
+}
+.unregistered{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+.contents{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 60rpx 30rpx 40rpx;
+}
+.contents .title{
+  color: #333333;
+  font-size: 32rpx;
+  height: 80rpx;
+  padding: 0 25rpx;
+  line-height: 40rpx;
+}
+.contents .btn{
+  color: #FFFFFF;
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}
+.contents .btn view{
+  width: 250rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+}
+.contents .btn .login{
+  background: #0BC99D
+}
+.contents .btn .cancel{
+  background: #CCCCCC
+}

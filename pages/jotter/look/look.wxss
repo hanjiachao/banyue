@@ -1,0 +1,351 @@
+/* pages/jotter/look/look.wxss */
+.conts .head{
+  background: #fff;
+  margin-bottom: 15rpx;
+  overflow: hidden;
+}
+.conts .head .title{
+  text-align: center;
+  color: #000000;
+  font-size: 36rpx;
+  font-weight:500;
+  margin: 35rpx 25rpx;
+}
+.progress_box {
+  position: relative;
+  width: 340rpx;
+  height: 340rpx;
+  margin: 0 auto 55rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.progress_bg {
+  position: absolute;
+  width: 340rpx;
+  height: 340rpx;
+}
+.progress_canvas {
+  width: 340rpx;
+  height: 340rpx;
+}
+.conts .progress_text{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.conts .progress_text .progress_info{
+  color: #999999;
+  font-size: 28rpx;
+  text-align: center;
+}
+.conts .progress_text .progress_info text{
+  color: #4CCFA6;
+  font-size: 88rpx;
+}
+.conts .progress_text .text{
+  color: #999999;
+  font-size: 28rpx;
+  margin-top: 60rpx;
+}
+.conts .panel{
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.conts .courseList{
+  padding-bottom: 90rpx;
+}
+.conts .panel .title{
+  color: #4D4D4D;
+  font-size: 30rpx;
+  padding: 25rpx;
+  border-bottom: 2rpx solid #DBDBDB
+}
+.conts .panel .list{
+  padding: 30rpx 25rpx;
+  box-sizing: border-box;
+}
+.conts .panel .list .item{
+  width: 33.33%;
+  display: inline-block;
+  text-align: center;
+}
+.conts .panel .list .item .num{
+  color: #4CCFA6;
+  font-size: 88rpx;
+}
+.conts .panel .list .item .text{
+  color: #000000;
+  font-size: 30rpx;
+}
+
+
+.conts .panel .topic{
+  padding: 0 25rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .panel .topic .title{
+  height: 100%;
+  padding: 0;
+  border: 0;
+}
+.conts .panel .topic .title .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .show .topic .title .text{
+  color: #0BC99D;
+}
+.conts .panel .topic .title .msg{
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 25rpx;
+}
+.conts .panel .topic .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .panel .topic .icon image{
+  width: 20rpx;
+  height: 35rpx;
+}
+.conts .show .topic .icon image{
+  transform: rotate(90deg)
+}
+.topic_son{
+  background: #F2F3F4;
+  padding: 0 25rpx;
+  height: 0rpx;
+  overflow: hidden;
+}
+/* 展开 */
+.show .topic_son{
+  height: auto;
+}
+.topic_son .items{
+  padding: 0 95rpx;
+  height: 80rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.topic_son .items .title{
+  width: 470rpx;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topic_son .items .imgBox{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.topic_son .items .imgBox image{
+  width: 40rpx;
+  height: 35rpx;
+}
+
+.course{
+  padding:40rpx 0;
+  margin:0 25rpx;
+  height:205rpx;
+  box-sizing:border-box;
+  border-bottom:2rpx solid #DBDBDB;
+}
+
+.course .item{
+  margin-left: 150rpx;
+}
+.course .imgBox{
+  width: 125rpx;
+  height: 125rpx;
+}
+.course .imgBox image{
+  width: 100%;
+  height: 100%;
+}
+.course .item .title{
+  font-size: 28rpx;
+  color: #000000;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding: 0;
+  border: 0;
+}
+.course .item .jingpin .info>view{
+  display: inline-block;
+  color: #808080;
+  font-size: 26rpx;
+}
+.course .item .jingpin .info .people image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.course .item .jingpin .info .timer image{
+  width: 35rpx;
+  height: 25rpx;
+}
+.course .item .jingpin .info view text{
+  margin: 0 30rpx 0 7rpx;
+}
+.course .item .jingpin .money{
+  font-size: 26rpx;
+  color: #FF4C4C;
+}
+.course .item .pintuan .info>view{
+  display: inline-block;
+  color: #808080;
+  font-size: 26rpx;
+}
+.course .item .pintuan .info .people image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.course .item .pintuan .info .timer image{
+  width: 35rpx;
+  height: 25rpx;
+}
+.course .item .pintuan .info view text{
+  margin: 0 30rpx 0 7rpx;
+}
+.course .item .pintuan .info .team{
+  color: #FF4C4C;
+}
+.course .item .pintuan .money{
+  font-size: 26rpx;
+}
+.course .item .pintuan .money view{
+  display: inline-block;
+}
+.course .item .pintuan .money .num1{
+  color: #FF4C4C;
+}
+.course .item .pintuan .money .num2{
+  color: #808080;
+  margin-left: 25rpx;
+}
+
+
+.course .item .mianfei .info>view{
+  display: inline-block;
+  color: #808080;
+  font-size: 26rpx;
+}
+.course .item .mianfei .info .people image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.course .item .mianfei .info view text{
+  margin: 0 30rpx 0 7rpx;
+}
+.course .item .mianfei .money{
+  font-size: 26rpx;
+  color: #FF4C4C;
+}
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0BC99D;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.foot .btn{
+  width: 33.33%;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  border-right: 2rpx solid #fff
+}
+.foot .btn:last-child{
+  border: 0;
+}
+
+
+.conts .lists .content{
+  padding: 0 25rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .lists .content .title{
+  height: 100%;
+  padding: 0;
+}
+.conts .lists .content .title .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .show .content .title .text{
+  color: #0BC99D;
+}
+.conts .lists .content .title .msg{
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 25rpx;
+}
+.conts .content .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .content .icon image{
+  width: 20rpx;
+  height: 35rpx;
+}
+.conts .show .content .icon image{
+  transform: rotate(90deg)
+}
+.unregistered{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+/* 消耗积分 */
+.wrap{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.wrap .title{
+  color: #333333;
+  font-size: 32rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+  padding: 85rpx 70rpx 65rpx;
+  line-height: 50rpx;
+}
+.wrap .btn view{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 36rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #333333;
+}
+.wrap .btn .consume{
+  background: #0BC99D;
+  color: #fff;
+}

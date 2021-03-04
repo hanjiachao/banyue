@@ -1,0 +1,77 @@
+<!--pages/live/live.wxml-->
+<view class='conts'>
+  <view wx:if="{{show}}">
+    <view class='header'>
+      <view class='videoBox'>
+        <video wx:if="{{flag}}" custom-cache="{{false}}" id="polyvVideo" class="vp-v" src='{{videoSrc}}' autoplay='{{palyFlag}}' initial-time='{{show_time}}' data-state='{{isPlayingMusic}}' bindtimeupdate="timeUpdate" binderror="errorText" bindtap='click'></video>
+        <cover-view wx:else>
+          <cover-image style='width: 100%' src='{{v_cover}}'></cover-image>
+        </cover-view>
+		<cover-view class="speedContent {{!showSpeed || 'active'}}">
+			<cover-image class="moreBtn" src='../../image/moreBtn.png' catchtap="displaySpeed"></cover-image>
+			<cover-view class="speedList" wx:if="{{showSpeed}}">
+				<cover-view class="item" catchtap="setSpeed" wx:for='{{speedList}}' wx:key='{{index}}' data-speed='{{item}}'>{{item}}</cover-view>
+			</cover-view>
+		</cover-view>
+      </view>
+	  <view class="videoBtns">
+		  <view class="btn" bindtap="prevVideo">上一节</view>
+		  <view class="btn" bindtap="nextVideo">下一节</view>
+	  </view>
+      <view class='title'>{{v_name}}</view>
+    </view>
+    <view class='msg'>
+      <view class='list'>
+        <view class='info clearfix'>
+          <view class='img left'>
+            <image mode='widthFix' src='../../image/icon_15.png'></image>
+          </view>
+          <view class='text'>
+            <view class='title'>课程有效期{{v_validity}}</view>
+            <!-- <view class='num'>点击时间轴，可快捷切换本节课程进度</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='tab'>
+      <view class='head'>
+        <view class="items {{currentTab==1?'show':''}}" data-current="1" bindtap="swichNav">
+          <text>章节介绍</text>
+          <view class='active'></view>
+        </view>
+		<view class="items {{currentTab==0?'show':''}}" data-current="0" bindtap="swichNav">
+		  <text>课程介绍</text>
+		  <view class='active'></view>
+		</view>
+      </view>
+      <view class='scroll' wx:if="{{currentTab==0}}">
+        <view class='list'>
+          <!-- 引入模板 -->
+          <import src="../../wxParse/wxParse.wxml" />
+          <!--这里data中article为bindName -->
+          <template is="wxParse" data="{{wxParseData:timeline.nodes}}" />
+        </view>
+      </view>
+      <view class='scroll' wx:if="{{currentTab==1}}">
+        <view class='list' wx:if="{{!next_status}}">
+          <!-- 引入模板 -->
+          <import src="../../wxParse/wxParse.wxml" />
+          <!--这里data中article为bindName -->
+          <template is="wxParse" data="{{wxParseData:v_section_introduce.nodes}}" />
+        </view>
+        <view class='listBox' wx:else>
+          <view class='title'>章节</view>
+          <view class='list'>
+            <view class='item clearfix' wx:for='{{next_list}}' wx:key='' wx:for-index="idx" data-v_vid='{{item.vd_vid}}' data-index='{{idx}}' bindtap='watch'>
+              <view class='play-img left'>
+                <image src='../../image/icon_20.png'></image>
+              </view>
+              <view class='timer right'>时长：{{item.vd_time}}</view>
+              <view style='color: {{idx == index ? "#0BC99D" : "#666"}}' class='text-cen'>{{item.vd_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

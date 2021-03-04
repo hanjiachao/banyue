@@ -1,0 +1,259 @@
+<!--pages/courseDetails/courseDetails.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='videoBox'>
+      <video wx:if='{{!flag}}' custom-cache="{{false}}" id="polyvVideo" class="vp-v" src='{{videoSrc}}' data-state='{{isPlayingMusic}}' autoplay="{{playFlag}}" initial-time="{{startTime}}" bindtimeupdate="timeUpdate" bindtap='click'></video>
+      <cover-view class='shade' wx:if='{{flag}}'>
+        <cover-image src='{{v_cover}}'></cover-image>
+      </cover-view>
+	  <cover-view class="speedContent {{!showSpeed || 'active'}}" wx:if='{{!flag}}'>
+	  	<cover-image class="moreBtn" src='../../image/moreBtn.png' catchtap="displaySpeed"></cover-image>
+	  	<cover-view class="speedList" wx:if="{{showSpeed}}">
+	  		<cover-view class="item" catchtap="setSpeed" wx:for='{{speedList}}' wx:key='{{index}}' data-speed='{{item}}'>{{item}}</cover-view>
+	  	</cover-view>
+	  </cover-view>
+    </view>
+	<view class="videoBtns">
+		<view class="btn" bindtap="prevVideo">上一节</view>
+		<view class="btn" bindtap="nextVideo">下一节</view>
+	</view>
+    <view class='title'>{{v_name}}</view>
+    <view class='info'>{{v_abstract}}</view>
+    <view class='money' wx:if='{{flag1&&iphoneFlag1&&isIos}}'>￥{{v_price}}</view>
+    <view class='team' wx:if='{{flag2}}'>
+      <text class='num1'>成团人数：{{v_total_user}}人</text>
+      <text class='num2'>还差{{residue_num}}人拼团</text>
+    </view>
+  </view>
+  <view class='msg'>
+    <view class='list'>
+      <view class='info clearfix'>
+        <view class='img left'>
+          <image mode='widthFix' src='../../image/icon_13.png'></image>
+        </view>
+        <view class='text left'>
+          <view class='title'>观看人数</view>
+          <view class='num'>{{v_see_num}}</view>
+        </view>
+      </view>
+      <view class='info clearfix' wx:if='{{flag7}}'>
+        <view class='img left'>
+          <image mode='widthFix' src='../../image/icon_14.png'></image>
+        </view>
+        <view class='text left'>
+          <view class='title'>销售数量</view>
+          <view class='num'>{{v_buy_num}}</view>
+        </view>
+      </view>
+      <view class='info clearfix' wx:if='{{flag8}}'>
+        <view class='img left'>
+          <image mode='widthFix' src='../../image/icon_16.png'></image>
+        </view>
+        <view class='text left'>
+          <view class='title'>课程时长</view>
+          <view class='num'>{{v_duration}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='list' wx:if='{{flag3}}'>
+      <view class='info clearfix'>
+        <view class='img left'>
+          <image mode='widthFix' src='../../image/icon_15.png'></image>
+        </view>
+        <view class='text left'>
+          <view class='title'>课程有效期</view>
+          <view class='num'>{{v_validity}}天</view>
+        </view>
+      </view>
+      <view class='info clearfix'>
+        <view class='img left'>
+          <image mode='widthFix' src='../../image/icon_16.png'></image>
+        </view>
+        <view class='text left'>
+          <view class='title'>课程时长</view>
+          <view class='num'>{{v_duration}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='teamRule' wx:if='{{flag4}}'>
+    <view class='title'>拼团规则</view>
+    <view class='info'>
+      <!-- 引入模板 -->
+      <import src="../../wxParse/wxParse.wxml" />
+      <!--这里data中article为bindName -->
+      <template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+    </view>
+  </view>
+  <view class='tab'>
+    <view class='head'>
+      <view class="items {{currentTab==0?'show':''}}" data-current="0" bindtap="swichNav">
+        <text>章节介绍</text>
+        <view class='active'></view>
+      </view>
+      <view class="items {{currentTab==1?'show':''}}" data-current="1" bindtap="swichNav">
+        <text>课程介绍</text>
+        <view class='active'></view>
+      </view>
+      <view class="items {{currentTab==2?'show':''}}" data-current="2" bindtap="swichNav">
+        <text>讲师介绍</text>
+        <view class='active'></view>
+      </view>
+    </view>
+    <view class='scroll' wx:if="{{currentTab==0}}">
+       <view class='list' wx:if="{{!next_status}}">
+          <!-- 引入模板 -->
+          <import src="../../wxParse/wxParse.wxml" />
+          <!--这里data中article为bindName -->
+          <template is="wxParse" data="{{wxParseData:v_section_introduce.nodes}}" />
+        </view>
+        <view class='listBox' wx:else>
+          <view class='title'>章节</view>
+          <view class='list'>
+            <view class='item clearfix' wx:for='{{next_list}}' wx:key='' wx:for-index="idx" data-index='{{idx}}' data-v_vid='{{item.vd_vid}}' bindtap='watch'>
+              <view class='play-img left'>
+                <image src='../../image/icon_20.png'></image>
+              </view>
+              <view class='timer right'>时长：{{item.vd_time}}</view>
+              <view style='color: {{idx == index ? "#0BC99D" : "#666"}}' class='text-cen'>{{item.vd_name}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class='scroll' wx:if="{{currentTab==1}}">
+      <view class='list'>
+        <!-- 引入模板 -->
+        <import src="../../wxParse/wxParse.wxml" />
+        <!--这里data中article为bindName -->
+        <template is="wxParse" data="{{wxParseData:v_detail.nodes}}" />
+      </view>
+    </view>
+    <view class='scroll' wx:if="{{currentTab==2}}">
+      <view class='list'>
+        <!-- 引入模板 -->
+        <import src="../../wxParse/wxParse.wxml" />
+        <!--这里data中article为bindName -->
+        <template is="wxParse" data="{{wxParseData:v_teacher_introduce.nodes}}" />
+      </view>
+    </view>
+  </view>
+  <view class='footer clearfix'>
+    <view class='operation left' style='width:100%'>
+      <view class='content' bindtap='share'>
+        <view class='icon'>
+          <image mode='widthFix' src='../../image/icon_17.png'></image>
+        </view>
+        <view class='text'>分享</view>
+      </view>
+      <view class='content' data-status='{{status}}' bindtap='collect'>
+        <view class='icon'>
+          <image mode='widthFix' src='{{collectUrl}}'></image>
+        </view>
+        <view class='text'>收藏</view>
+      </view>
+    </view>
+    <!-- <view wx:if="{{flag5&&iphoneFlag1}}" class='btn right' data-type='精品' bindtap='purchase'>立即购买</view>
+    <view wx:if='{{flag6&&iphoneFlag1}}' class='btn right'>
+      <view class='money1' data-type='精品' bindtap='purchase'>
+        <view class='title'>￥{{v_price}}</view>
+        <view class='text'>单独购买</view>
+      </view>
+      <view class='money2' data-type='拼团' bindtap='purchase'>
+        <view class='title'>￥{{v_group_price}}</view>
+        <view class='text'>立即参团</view>
+      </view>
+    </view> -->
+  </view>
+</view>
+<cover-view class='unregistered' wx:if='{{login1}}'>
+  <cover-view class='contents'>
+    <cover-view class='title'>只有绑定用户才可观看课程哦！</cover-view>
+    <cover-view class='btn clearfix'>
+      <cover-view class='login left' bindtap='register'>绑定</cover-view>
+      <cover-view class='cancel right' bindtap='abolish1'>取消</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+<cover-view class='unregistered' wx:if='{{login2&&minute > 0}}'>
+  <cover-view class='contents'>
+    <cover-view class='title'>未绑定信息用户只能试看{{minute}}分钟哦！</cover-view>
+    <cover-view class='btn clearfix'>
+      <cover-view class='login left' bindtap='register'>绑定</cover-view>
+      <cover-view class='cancel right' bindtap='abolish2'>取消</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+<!-- <cover-view class='buy' wx:if='{{buy1&&iphoneFlag1&&isIos&&minute > 0}}'> -->
+<cover-view class='buy' wx:if='{{buy1&&iphoneFlag1&&minute > 0}}'>
+  <cover-view class='contents'>
+    <cover-view class='title'>这是付费视频，只可观看前{{minute}}分钟哦！请尽快去联系客服购买吧！</cover-view>
+    <cover-view class='btn clearfix'>
+      <cover-view class='login left' data-type='精品' bindtap='purchase'>确定</cover-view>
+      <cover-view class='cancel right' bindtap='quxiao'>取消</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+<!-- <cover-view class='buy' wx:if='{{buy2&&iphoneFlag1&&isIos}}'>
+  <cover-view class='contents'>
+    <cover-view class='title'>这是付费视频，只可观看前5分钟哦！请尽快去联系客服购买吧！</cover-view>
+    <cover-view class='btn clearfix'>
+      <cover-view class='cancel buyOk' bindtap='clickOk'>OK</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view> -->
+<cover-view class='achieve' wx:if='{{achieve&&iphoneFlag1&&isIos}}'>
+  <cover-view class='wrap'>
+    <cover-view class='content'>
+      <cover-view class='title'>您已购买过此课程！</cover-view>
+      <cover-view class='info'>请在我的-我的课程中查看</cover-view>
+    </cover-view>
+    <cover-view class='btn' bindtap='haode'>好的</cover-view>
+  </cover-view>
+</cover-view>
+<cover-view class='share' wx:if='{{share}}' catchtap='shareFlag'>
+  <cover-view class='content' catchtap='shareFlag1'>
+    <cover-view class='title'>分享到</cover-view>
+    <cover-view class='btn clearfix'>
+      <cover-view wx:if='{{iphoneFlag1}}' style='width:33.3%' class='item left' open-type='share' hover-class='none'  catchtap='friends'>
+        <cover-view class='img'>
+          <cover-image src='../../image/pengyouquan1.png'></cover-image>
+        </cover-view>
+        <cover-view class='text'>朋友圈</cover-view>
+      </cover-view>
+	  <cover-view wx:if='{{iphoneFlag1}}' style='width:{{iphoneFlag1?"33.3%":"50%"}}' class='item right' open-type='share' hover-class='none'  catchtap='saveCode'>
+	    <cover-view class='img'>
+	      <cover-image src='{{v_qrcode}}'></cover-image>
+	    </cover-view>
+	    <cover-view class='text'>二维码</cover-view>
+	  </cover-view>
+      <button class='item right' style='width:{{iphoneFlag1?"33.3%":"50%"}}' open-type='share' hover-class='none'>
+        <cover-view class='img' style='width:85rpx;'>
+          <cover-image src='../../image/friend.png'></cover-image>
+        </cover-view>
+        <cover-view class='text'>微信好友</cover-view>
+      </button>
+    </cover-view>
+  </cover-view>
+</cover-view>
+<!-- 免费课程消耗积分 -->
+<cover-view class='expend' wx:if='{{expend}}'>
+  <cover-view class='contents'>
+    <cover-view class='title'>想要观看这个课程，需要消耗{{v_can_use_integral}}积分哦！</cover-view>
+    <cover-view class='btn clearfix'>
+      <cover-view class='cancel left' bindtap='callOff'>取消</cover-view>
+      <cover-view class='login right' bindtap='consume'>确认消耗</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+<!-- 苹果机型购买流程 -->
+<cover-view class='iphoneStyle' wx:if='{{iphoneFlag}}' catchtap='iphone'>
+  <cover-view class='content' catchtap='iphoneSon'>
+    <!-- <cover-view class='title'>你的手机是iOS系统，请扫描下方二维码添加客服微信进行线下交易</cover-view> -->
+    <cover-image bindtap="previewImage" src='{{qrcode}}'></cover-image>
+  </cover-view>
+</cover-view>
+<!-- 分享回到首页 -->
+<cover-view class='homePage' wx:if='{{homePageFlag}}' bindtap='homePage'>
+  <cover-image src='../../image/icon_1.png'></cover-image>
+  <cover-view class='text'>首页</cover-view>
+</cover-view>

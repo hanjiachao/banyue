@@ -1,0 +1,21 @@
+<!--pages/sheet/sheet.wxml-->
+<view class='conts'>
+  <view class='head clearfix'>
+    <view class='title left'>总题数：{{count}}题</view>
+    <view class='icon right' bindtap='returns'>
+      <image src='../../image/icon8.png'></image>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='select' wx:for='{{infoList}}' wx:for-item='info' wx:key=''>
+      <view class='title'>{{info.su_role}}{{info.count=='0'?'':'（剩余' + info.count + '道题未作答）'}}</view>
+      <view class='item'>
+        <view class='wrap' wx:for='{{info.next_list}}' wx:key=''>
+          <view class='list {{item.answer=="已答"?"active":""}}'>{{index+1}}</view>
+        </view>
+      </view>
+    </view>
+    <view style='height:140rpx;'></view>
+  </view>
+  <view class='submit' bindtap='submit'>交卷并查看结果</view>
+</view>

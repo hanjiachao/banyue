@@ -1,0 +1,305 @@
+/* pages/live/live.wxss */
+page{
+  background: #fff;
+}
+.conts .header{
+  background: #fff;
+}
+.conts .header .videoBox{
+  position: relative;
+}
+.conts .header .videoBox video{
+  width: 100%;
+}
+.conts .header .videoBox .shade{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 999;
+  opacity: 0;
+}
+.conts .header .title{
+  color: #333333;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  padding: 30rpx 25rpx;
+  font-weight: 600;
+}
+.conts .header .info{
+  color: #666666;
+  font-size: 28rpx;
+  padding: 10rpx 25rpx;
+}
+.conts .header .money{
+  color: #FF4848;
+  font-size: 36rpx;
+  font-weight: bold;
+  padding: 0 25rpx 20rpx;
+  margin-top: 25rpx;
+}
+.conts .header .team{
+  color: #FE6060;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  padding: 0 25rpx 20rpx;
+}
+.conts .header .team .num1{
+  margin-right: 80rpx;
+}
+.conts .msg{
+  background: #fff;
+  border-top: 20rpx solid #F2F3F4;
+  border-bottom: 20rpx solid #F2F3F4;
+}
+.conts .msg .list{
+  line-height: 130rpx;
+  height: 130rpx;
+}
+.conts .msg .list .info{
+  height: 100%;
+  text-align: center;
+  padding-left: 55rpx;
+  box-sizing: border-box;
+}
+.conts .msg .info .img{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .msg .info .img image{
+  width: 40rpx;
+  height: 35rpx;
+}
+.conts .msg .info .text{
+  margin-left: 60rpx;
+  text-align: left;
+  height: 100%;
+}
+.conts .msg .info .title{
+  color: #333333;
+  font-size: 30rpx;
+  /* line-height: 60rpx; */
+}
+.conts .msg .info .num{
+  color: #666;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+.conts .teamRule{
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 25rpx;
+}
+.conts .teamRule .title{
+  color: #333333;
+  font-size: 32rpx;
+}
+.conts .teamRule .info{
+  margin-top: 20rpx;
+  color: #666666;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.conts .tab{
+  background: #fff;
+  margin-bottom: 97rpx;
+}
+.conts .tab .head{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #E1E2E3;
+}
+.conts .tab .head .items{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  color: #333333;
+  font-size: 32rpx;
+  position: relative;
+}
+.conts .tab .head .show{
+  color: #0BC99D;
+}
+.conts .tab .show .active{
+  position: absolute;
+  width: 125rpx;
+  height: 4rpx;
+  background: #0BC99D;
+  left: 125rpx;
+  bottom: 5rpx;
+}
+swiper{
+  background: #fff;
+}
+swiper scroll-view{
+  height: 100%;
+}
+swiper .list{
+  background: #fff;
+  padding: 40rpx 25rpx;
+}
+swiper .list .user .hdImg{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+swiper .list .user .hdImg image{
+  width: 100%;
+  height: 100%;
+}
+swiper .list .user .info{
+  margin-left: 160rpx;
+}
+swiper .list .user .info .name{
+  color: #333333;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+swiper .list .user .info .text{
+  color: #666666;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin-top: 15rpx;
+}
+swiper .list .wrap{
+  border-top: 20rpx solid #F2F3F4;
+  background: #fff;
+  padding: 30rpx 25rpx;
+}
+swiper .list .wrap .title{
+  color: #333333;
+  font-size: 24rpx;
+}
+swiper .list .wrap .text{
+  color: #666666;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+swiper .section{
+  padding: 40rpx 25rpx;
+}
+swiper .section .title{
+  color: #333333;
+  font-size: 30rpx;
+}
+swiper .section .info .text{
+  color: #333333;
+  font-size: 26rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+swiper .section .info .content{
+  border-bottom: 2rpx solid #E1E2E3;
+}
+swiper .section .info .content .msg{
+  margin: 0;
+}
+swiper .section .info .content .msg .icon{
+  width: 22rpx;
+  height: 25rpx;
+  display: inline-block;
+  margin: 0 10rpx 0 70rpx;
+}
+swiper .section .info .content .msg .icon image{
+  width: 100%;
+  height: 100%;
+}
+swiper .section .info .content .msg .test{
+  display: inline-block;
+  color: #666666;
+  font-size: 26rpx;
+}
+swiper .section .info .content .timer{
+  color: #999999;
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+/* 章节 */
+.listBox{
+  padding: 40rpx 0;
+}
+.listBox .title{
+  color: #333333;
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-left: 25rpx;
+}
+.listBox .list{
+  padding: 30rpx 50rpx;
+}
+.listBox .list .item{
+  height: 80rpx;
+  border-bottom: 2rpx solid #E1E2E3;
+}
+.listBox .list .item .play-img{
+  width: 22rpx;
+  height: 25rpx;
+  margin-top: 30rpx;
+}
+.listBox .list .item .play-img image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.listBox .list .item .timer{
+  color: #999999;
+  font-size: 26rpx;
+  line-height: 80rpx;
+}
+.listBox .list .item .text-cen{
+  color: #666;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  margin: 0 165rpx 0 45rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.speedContent{
+	width: 90rpx;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.speedContent.active{
+	background: rgba(0,0,0,0.2);
+}
+.moreBtn{
+	width: 32rpx;
+	height: 32rpx;
+	padding: 20rpx 30rpx;
+}
+.speedList{
+	margin-top: -15rpx;
+	padding-bottom: 10rpx;
+}
+.speedList .item{
+	width: 90rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+	color: #fff;
+	font-size: 24rpx;
+}
+.videoBtns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 2rpx solid #E1E2E3;
+}
+.videoBtns .btn{
+	width: 50%;
+	line-height: 60rpx;
+	padding-bottom: 10rpx;
+	text-align: center;
+	font-size: 32rpx;
+	color: #333;
+}

@@ -1,0 +1,33 @@
+<!--pages/screen/screen.wxml-->
+<view class='conts'>
+  <scroll-view scroll-y  class='margins'>
+    <view class='header'>
+      <view class='title clearfix'>
+        <view class='text left'>已选条件：</view>
+        <view class='icon right' bindtap='deletes'>
+          <image src='../../image/delete.png'></image>
+        </view>
+      </view>
+      <view class='content'>
+        <view class='list clearfix' wx:for="{{list}}" wx:key="" bindtap='remove' data-index='{{index}}' data-item="{{ item }}" data-ca_id='{{item.ca_id}}'>
+          <view class='text left'>{{item.text}}</view>
+          <view class='icon left'>
+            <image src='../../image/icon22.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='panel'>
+      <view class='items' wx:for="{{fenlei}}" wx:key="" wx:for-item="p" wx:for-index="pIndex">
+        <view class='title'>{{p.ca_name}}：</view>
+        <view class='wrap' wx:for="{{p.next_list}}" wx:for-item="g" wx:key="" bindtap='active' data-ca_id='{{p.ca_id}}' data-parent-index="{{ pIndex }}" data-index="{{index}}" data-item="{{p}}">
+          <view class='info'>
+            <text>{{g.ca_name}}</text>
+            <image class="{{ checkedList[g.ca_id] ? '' : 'active' }}" mode='widthFix' src='../../image/icon23.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <button bindtap='doSubmit'>查询</button>
+</view>

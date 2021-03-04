@@ -1,0 +1,103 @@
+/* pages/collectDetails/collectDetails.wxss */
+page,.conts{
+  height: 100%;
+}
+.conts .head{
+  background: #fff;
+  height: 85rpx;
+  line-height: 85rpx;
+  padding: 0 25rpx;
+}
+.conts .head .class{
+  color: #333333;
+  font-size: 28rpx;
+}
+.conts .head .num{
+  height: 35rpx;
+  line-height: 35rpx;
+  background: #E6E6E6;
+  border-radius: 18rpx;
+  font-size: 24rpx;
+  color: #333;
+  padding: 0 20rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.conts .head .num text{
+  color: #0BC99D;
+}
+.conts .content{
+  padding: 50rpx 25rpx 100rpx;
+}
+.conts .content .question{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.conts .content .select{
+  margin-top: 50rpx;
+}
+.conts .content .select .options{
+  line-height: 50rpx;
+}
+.conts .content .select .options .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.conts .select .icon image{
+  width: 38rpx;
+  height: 38rpx;
+}
+.conts .content .select .options .text{
+  margin-left: 70rpx;
+  color: #666666;
+  font-size: 28rpx;
+}
+.conts .content .title{
+  color: #BFBFBF;
+  font-size: 28rpx;
+  margin: 30rpx 0;
+}
+.conts .content .wrap{
+  color: #787878;
+  font-size: 30rpx;
+}
+.conts .content .wrap .myanswer .text{
+  color: #FC5B61;
+  display: inline-block;
+}
+.conts .content .wrap .myanswer .test{
+  color: #27C89F;
+}
+.conts .content .wrap .success text{
+  color: #27C89F;
+}
+.conts .content .parsing{
+  color: #787878;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-indent:2em;
+}
+.foot{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0BC99D;
+  color: #fff;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.foot view{
+  width: 50%;
+  border-right: 2rpx solid #fff;
+  box-sizing: border-box;
+}
+.foot .parsing{
+  border-right: 0;
+}

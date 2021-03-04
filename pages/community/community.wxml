@@ -1,0 +1,32 @@
+<!--pages/community/community.wxml-->
+<view class='warp'>
+  <view class='header'>
+    <view class='box clearfix'>
+      <view class='img left'>
+        <image mode='widthFix' src='../../image/search1.png'></image>
+      </view>
+      <view class='ipt'>
+        <input placeholder='请输入关键词' value='' placeholder-style="color:#fff;" bindconfirm="onShowtap"></input>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{true}}" class='conts'>
+    <view wx:for="{{communityList}}" wx:key="" class='list clearfix' bindtap='comdetails'>
+      <view class='imgBox left'>
+        <image class='img' src='{{item.ar_image}}'></image>
+        <image wx:if="{{item.markFlag}}" class='mark' mode='widthFix' src='../../image/mark.png'></image>
+      </view>
+      <view class='info'>
+        <view class='title'>{{item.ar_title}}</view>
+        <view class='text' data-ar_id='{{item.ar_id}}'>{{item.content}}</view>
+        <view class='time'>{{item.date}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{false}}" class='conts'>
+    <view class='img-box'>
+      <image mode='widthFix' src='../../image/results.png'></image>
+    </view>
+    <view class='text-results'>没有找到您搜索的结果，试试其他的吧！</view>
+  </view>
+</view>

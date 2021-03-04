@@ -1,0 +1,131 @@
+<!--pages/jotter/look/look.wxml-->
+<view class='conts'>
+  <view class='head'>
+    <view class='title'>{{title}}</view>
+    <view class='progress_box'>
+      <!-- 绘制圆环背景 -->
+      <canvas class="progress_bg" canvas-id="canvasProgressbg" />
+      <!-- 绘制加载中圆弧 -->
+      <canvas class="progress_canvas" canvas-id="canvasProgress" /> 
+      <!-- 绘制圆弧中心提示文字 -->
+      <view class="progress_text">
+        <view class='progress_info'><text>{{accuracy}}</text>%</view>
+        <view class='text'>正确率</view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='title'>分析</view>
+    <view class='list'>
+      <view class='item'>
+        <view class='num'>{{correct}}</view>
+        <view class='text'>答对错题</view>
+      </view>
+      <view class='item'>
+        <view class='num'>{{residue}}</view>
+        <view class='text'>剩余错题</view>
+      </view>
+      <view class='item'>
+        <view class='num'>{{remove}}</view>
+        <view class='text'>移除错题</view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='title'>推荐同类题型</view>
+    <view class="content  {{info.open ? 'show' : ''}}" wx:if='{{type=="历年真题"?true:false}}' wx:for='{{cate_list}}' wx:for-item='info' wx:key="" data-id='{{info.ca_id}}' bindtap='unwind'>
+      <view class='topic clearfix'>
+        <view class='title left'>
+          <text class='text'>{{info.ca_name}}</text>
+          <text class='msg'>{{info.count}}套真题</text>
+        </view>
+        <view class='icon right'>
+          <image src='{{urlImg}}'></image>
+        </view>
+      </view>
+      <view class='topic_son'>
+        <view class='items claerfix' wx:for="{{info.next_list}}" wx:key=""data-ca_id='{{item.ca_id}}' data-role='{{item.role}}'  data-ca_time='{{item.ca_time}}' catchtap='answer'>
+          <view class='title left'>{{item.ca_name}}</view>
+          <view class='imgBox right'>
+            <image src='../../../image/write.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="lists clearfix" wx:if='{{type=="在线模考"?true:false}}' wx:for="{{cate_list}}" wx:key="" data-ca_id='{{item.ca_id}}' data-role='{{item.role}}' data-ca_time='{{item.ca_time}}' bindtap='answer'>
+      <view class='content clearfix'>
+        <view class='title left'>
+          <text class='text'>{{item.ca_name}}</text>
+        </view>
+        <view class='icon right'>
+          <image src='../../../image/icon8.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='panel courseList'>
+    <view class='title'>推荐同类课程</view>
+    <view class='content course clearfix' wx:for="{{video_list}}" wx:key="" data-type='{{item.v_type}}' data-v_id='{{item.v_id}}' bindtap='goCourse'>
+      <view class='imgBox left'>
+        <image class='bgImg' src='{{item.v_cover}}'></image>
+      </view>
+      <view class='item'>
+        <view class='title'>{{item.v_name}}</view>
+        <view class='jingpin' wx:if="{{item.v_type == '精品'?true:false}}">
+          <view class='info'>
+            <view class='people'>
+              <image src='../../../image/icon5.png'></image>
+              <text>{{item.v_see_num}}</text>
+            </view>
+            <view class='timer'>
+              <image src='../../../image/calendar.png'></image>
+              <text>{{item.v_validity}}</text>
+            </view>
+          </view>
+          <view class='money' wx:if="{{isIos}}">精品课程￥{{item.v_price}}</view>
+        </view>
+        <view class='pintuan'  wx:if="{{item.v_type == '拼团'?true:false}}">
+          <view class='info'>
+            <view class='people'>
+              <image src='../../../image/icon5.png'></image>
+              <text>{{item.v_see_num}}</text>
+            </view>
+            <view class='timer'>
+              <image src='../../../image/code.png'></image>
+              <text>{{item.v_validity}}</text>
+            </view>
+            <view class='team'>还差{{item.residue_num}}人成团</view>
+          </view>
+          <view class='money' wx:if="{{isIos}}">
+            <view class='num1'>拼团价￥{{item.v_group_price}}</view>
+            <view class='num2'>单价￥{{item.v_price}}</view>
+          </view>
+        </view>
+        <view class='mianfei' wx:if="{{item.v_type == '免费'?true:false}}">
+          <view class='info'>
+            <view class='people'>
+              <image src='../../../image/icon5.png'></image>
+              <text>{{item.v_see_num}}</text>
+            </view>
+          </view>
+          <view class='money' wx:if="{{isIos}}">免费课程</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='foot'>
+    <view class='btn' bindtap='parsing'>查看解析</view>
+    <view class='btn' bindtap='continue'>继续练习</view>
+    <view class='btn' bindtap='exit'>退出练习</view>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{integral}}'>
+  <view class='wrap'>
+    <view class='title'>想要在线模拟这份题，需要消耗
+{{grade}}积分哦！</view>
+    <view class='btn'>
+      <view class='close' bindtap='close'>取消</view>
+      <view class='consume' bindtap='consume'>确认消耗</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/question/question.wxml-->
+<view class='content'>
+  <view class='item clearfix' bindtap='exams'>
+    <image class='img left' mode='widthFix' src='../../image/bg4.png'></image>
+    <view class='text left'>
+      <view class='title'>历年真题</view>
+      <view class='subTitle'>
+        <text>{{count}}</text>道真题
+      </view>
+    </view>
+  </view>
+  <view class='item clearfix' bindtap='mockexam'>
+    <image class='img left' mode='widthFix' src='../../image/bg5.png'></image>
+    <view class='text left'>
+      <view class='title'>在线模考</view>
+      <view class='subTitle'>在线模拟练习、再现实战</view>
+    </view>
+  </view>
+  <view class='item clearfix' bindtap='mistakes'>
+    <image class='img left' mode='widthFix' src='../../image/bg6.png'></image>
+    <view class='text left'>
+      <view class='title'>错题本</view>
+      <view class='subTitle'>反复练习、牢靠掌握</view>
+    </view>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{flag}}'>
+  <view class='contents'>
+    <view class='title'>您还未绑定信息，请前去绑定信息</view>
+    <view class='btn clearfix'>
+      <view class='login left' bindtap='register'>绑定</view>
+      <view class='cancel right' bindtap='abolish'>取消</view>
+    </view>
+  </view>
+</view>

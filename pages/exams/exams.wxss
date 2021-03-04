@@ -1,0 +1,139 @@
+/* pages/exams/exams.wxss */
+page{
+  background: #fff;
+}
+.conts .list .content{
+  padding: 0 25rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .list .content .title{
+  height: 100%;
+}
+.conts .list .content .title .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .show .content .title .text{
+  color: #0BC99D;
+}
+.conts .list .content .title .msg{
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 25rpx;
+}
+.conts .content .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .content .icon image{
+  width: 20rpx;
+  height: 35rpx;
+}
+.conts .show .content .icon image{
+  transform: rotate(90deg)
+}
+.panel{
+  background: #F2F3F4;
+  padding: 0 25rpx;
+  height: 0rpx;
+  overflow: hidden;
+}
+/* 展开 */
+.show .panel{
+  height: auto;
+}
+.panel .items{
+  padding: 0 95rpx;
+  height: 80rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.panel .items .title{
+  width: 470rpx;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.panel .items .imgBox{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.panel .items .imgBox image{
+  width: 40rpx;
+  height: 35rpx;
+}
+.panel .btn{
+  height:80rpx;
+  line-height:80rpx;
+  color:#0BC99D;
+  text-align:center;
+  border-radius:20rpx;
+  font-size:28rpx;
+}
+.unregistered{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+/* 消耗积分 */
+.wrap{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.wrap .title{
+  color: #333333;
+  font-size: 32rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+  padding: 85rpx 70rpx 65rpx;
+  line-height: 50rpx;
+}
+.wrap .btn view{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 36rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #333333;
+}
+.wrap .btn .consume{
+  background: #0BC99D;
+  color: #fff;
+}
+.homePage{
+  position: fixed;
+  bottom: 300rpx;
+  right: 20rpx;
+  z-index: 999;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(0 , 0 , 0 , .5)
+}
+.homePage cover-image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+.homePage .text{
+  color: #00C497;
+  font-size: 24rpx;
+}

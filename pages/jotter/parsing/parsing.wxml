@@ -1,0 +1,79 @@
+<!--pages/jotter/parsing/parsing.wxml-->
+<view class='conts' bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <view class='header clearfix'>
+    <view class='type left'>{{su_role}}</view>
+    <view class='number right'>{{index}}/{{count}}</view>
+  </view>
+  <view class='content'>
+    <view class='info'>{{su_question}}</view>
+    <!-- 单选题 -->
+    <view class='select' wx:if='{{su_role=="单选题"?true:false}}'>
+      <view class='options clearfix' data-select='A' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options1}}'></image>
+        </view>
+        <view class='text'>{{su_A}}</view>
+      </view>
+      <view class='options clearfix' data-select='B' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options2}}'></image>
+        </view>
+        <view class='text'>{{su_B}}</view>
+      </view>
+      <view class='options clearfix' data-select='C' wx:if='{{su_C==""?false:true}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options3}}'></image>
+        </view>
+        <view class='text'>{{su_C}}</view>
+      </view>
+      <view class='options clearfix' data-select='D' wx:if='{{su_D==""?false:true}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options4}}'></image>
+        </view>
+        <view class='text'>{{su_D}}</view>
+      </view>
+    </view>
+    <!-- 多选题 -->
+    <view class='select' wx:if='{{su_role=="多选题"?true:false}}'>
+      <view class='options clearfix' data-select='A' data-flagA='{{flagA}}'  catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options1}}'></image>
+        </view>
+        <view class='text'>{{su_A}}</view>
+      </view>
+      <view class='options clearfix' data-select='B' data-flagB='{{flagB}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options2}}'></image>
+        </view>
+        <view class='text'>{{su_B}}</view>
+      </view>
+      <view class='options clearfix' data-select='C' data-flagC='{{flagC}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options3}}'></image>
+        </view>
+        <view class='text'>{{su_C}}</view>
+      </view>
+      <view class='options clearfix' data-select='D' data-flagD='{{flagD}}' catchtap='response'>
+        <view class='icon left'>
+          <image src='{{options4}}'></image>
+        </view>
+        <view class='text'>{{su_D}}</view>
+      </view>
+    </view>
+    <view class='result' wx:if='{{su_role=="填空题"?true:false}}'>
+      <view class='text'>答案</view>
+      <view class='ipt'>
+        <view class='answer {{eb_answer==su_answer?"":"success"}}'>
+          我的答案：<view class='test'>{{eb_answer}}</view>
+        </view>
+        <view class='answer'>
+          正确答案：<view class='test'>{{su_answer}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='foot'>
+    <view class='btn' bindtap='exit'>退出错题本</view>
+    <view class='btn' bindtap='continue'>继续练习</view>
+  </view>
+</view>

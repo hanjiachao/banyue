@@ -1,0 +1,7 @@
+<!--pages/download/download.wxml-->
+<view class='conts'>
+  <view class='list' wx:for='{{infoList}}' wx:key='' data-path='{{item.path}}' bindtap='click'>
+    <view class='title'>{{item.name}}</view>
+    <view class='timer'>{{item.timer}}</view>
+  </view>
+</view>

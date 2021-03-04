@@ -1,0 +1,38 @@
+<!--pages/exams/exams.wxml-->
+<view class='conts'>
+  <view class="list {{info.open ? 'show' : ''}} clearfix" wx:for="{{infoList}}" wx:for-item='info' wx:key="index" data-id='{{info.ca_id}}' bindtap='unwind'>
+    <view class='content clearfix'>
+      <view class='title left'>
+        <text class='text'>{{info.ca_name}}</text>
+        <text class='msg'>{{info.count}}套真题</text>
+      </view>
+      <view class='icon right'>
+        <image src='{{urlImg}}'></image>
+      </view>
+    </view>
+    <view class='panel'>
+      <view class='items claerfix' wx:for="{{info.next_list}}" wx:key="" data-ca_id='{{item.ca_id}}' data-role='{{item.role}}'  data-ca_time='{{item.ca_time}}' data-status='{{item.pay_status}}' catchtap='answer'>
+        <view class='title left'>{{item.ca_name}}</view>
+        <view class='imgBox right'>
+          <image src='../../image/write.png'></image>
+        </view>
+      </view>
+      <view wx:if='{{info.next_list.length >= 5}}' class='btn' data-index='{{index}}' data-ca_id='{{info.ca_id}}' catchtap='more'>点击加载</view>
+    </view>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{integral}}'>
+  <view class='wrap'>
+    <view class='title'>想要在线模拟这份题，需要消耗
+{{grade}}积分哦！</view>
+    <view class='btn'>
+      <view class='close' bindtap='close'>取消</view>
+      <view class='consume' bindtap='consume'>确认消耗</view>
+    </view>
+  </view>
+</view>
+<!-- 分享回到首页 -->
+<cover-view class='homePage' wx:if='{{homePageFlag}}' bindtap='homePage'>
+  <cover-image src='../../image/icon_1.png'></cover-image>
+  <cover-view class='text'>首页</cover-view>
+</cover-view>

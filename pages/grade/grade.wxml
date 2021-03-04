@@ -1,0 +1,30 @@
+<!--pages/grade/grade.wxml-->
+<view class='conts'>
+  <view class='head'>
+    <view class='title'>{{title}}</view>
+    <view class='score'><text class='num'>{{get_score}}</text>分</view>
+    <view class='info clearfix'>
+      <view class='num left'>本卷满分：{{count_score}}分</view>
+      <view class='timer right'>用时：{{timer}}</view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='title'>各题型得分率</view>
+    <view class='table'>
+      <view class='th'>
+        <view class='td'>题目</view>
+        <view class='td'>得分</view>
+        <view class='td'>得分率</view>
+      </view>
+      <view class='tr' wx:for='{{infoList}}' wx:key=''>
+        <view class='td'>{{item.su_role}}</view>
+        <view class='td'>{{item.answer_score}}/{{item.count_score}}</view>
+        <view class='td'>{{item.scoring_average}}%</view>
+      </view>
+    </view>
+  </view>
+  <view class='foot clearfix'>
+    <view class='error left' bindtap='error'>查看错题</view>
+    <view class='parsing left' bindtap='explain'>查看解析</view>
+  </view>
+</view>

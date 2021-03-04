@@ -1,0 +1,110 @@
+/* pages/jotter/classify/classify.wxss */
+page{
+  background: #fff;
+}
+.conts{
+  padding: 0 25rpx;
+}
+.conts .list{
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .list .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .list .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .list .icon image{
+  width: 40rpx;
+  height: 34rpx;
+}
+.unregistered{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6)
+}
+.mask .content{
+  background: #fff;
+  width: 600rpx;
+  margin: 315rpx auto 0;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.mask .content .title{
+  text-align: center;
+  color: #333333;
+  font-size: 32rpx;
+  margin: 40rpx 80rpx 30rpx;
+}
+.mask .content .info{
+  color: #999999;
+  font-size: 28rpx;
+  text-align: center;
+}
+.mask .content .checkbox{
+  color: #999999;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  line-height: 26rpx;
+}
+checkbox .wx-checkbox-input{
+  width: 26rpx; /* 背景的宽 */
+  height: 26rpx; /* 背景的高 */
+  border: 1rpx solid #999999;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 1rpx solid #0BC99D;
+  background: #0BC99D;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  width: 26rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 26rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 26rpx;
+  text-align: center;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.mask .content .btnBox{
+  margin-top: 45rpx;
+  border-top: 2rpx solid #DDDDDD;
+}
+.mask .content .btnBox .btn{
+  width: 50%;
+  display: inline-block;
+  font-size: 36rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  text-align: center;
+  border-right: 2rpx solid #fff;
+  box-sizing: border-box;
+}
+.mask .content .btnBox .btn:last-child{
+  border: 0;
+}
+.mask .content .btnBox .btn1{
+  color: #fff;
+  background: #0BC99D;
+}

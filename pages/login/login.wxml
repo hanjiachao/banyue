@@ -1,0 +1,36 @@
+<!--pages/login/login.wxml-->
+<view class='conts'>
+  <view class='panel'>
+    <view class='logo'>
+      <image src='../../image/logo.png'></image>
+    </view>
+    <view class='form'>
+      <view class='title'>手机号绑定</view>
+      <view class='item clearfix'>
+        <view class='icon left'>
+          <image mode='widthFix' src='../../image/icon_22.png'></image>
+        </view>
+        <view class='close right' bindtap='empty'>
+          <image mode='widthFix' src='../../image/cancel.png'></image>
+        </view>
+        <view class='ipt'>
+          <input placeholder='请输入手机号' value='{{value}}' placeholder-style='color:#B6C2CE;font-size:28rpx;' maxlength="11" bindinput="getPhone"></input>
+        </view>
+      </view>
+      <view class='code clearfix'>
+        <view class='item left'>
+          <view class='text left'>
+            <view class='icon left'>
+              <image mode='widthFix' src='../../image/icon_23.png'></image>
+            </view>
+            <view class='ipt'>
+              <input placeholder='请输入验证码' value='{{code}}' bindinput='getcode' placeholder-style='color:#B6C2CE;font-size:28rpx;'></input>
+            </view>
+          </view>
+        </view>
+        <button class='huoqu right' bindtap='getCode' disabled='{{captchaDisabled}}'>{{text}}</button>
+      </view>
+      <view class='btn' bindtap='submint'>绑定</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+<!--pages/allQuestions/result/result.wxml-->
+<view class='conts'>
+  <view class='head clearfix'>
+    <view class='class left'>{{su_role}}</view>
+    <view class='num right'><text>{{index}}</text>/{{count}}</view>
+  </view>
+  <view class='content'>
+    <view class='question'>{{su_question}}</view>
+    <view class='select' wx:if="{{su_role == '单选题' || su_role == '多选题' ? true : false}}">
+      <view class='options'>
+        <view class='icon left'>
+          <image src='{{options1}}'></image>
+        </view>
+        <view class='text'>{{su_A}}</view>
+      </view>
+      <view class='options'>
+        <view class='icon left'>
+          <image src='{{options2}}'></image>
+        </view>
+        <view class='text'>{{su_B}}</view>
+      </view>
+      <view class='options' wx:if='{{su_C==""?false:true}}'>
+        <view class='icon left'>
+          <image src='{{options3}}'></image>
+        </view>
+        <view class='text'>{{su_C}}</view>
+      </view>
+      <view class='options' wx:if='{{su_D==""?false:true}}'>
+        <view class='icon left'>
+          <image src='{{options4}}'></image>
+        </view>
+        <view class='text'>{{su_D}}</view>
+      </view>
+      <view class='title'>答案</view>
+      <view class='wrap'>
+        <view class='myanswer'>
+          我的答案：<view class="text {{answer.toString()==su_answer.toString()?'test':''}}">{{answer==''?'您没填写答案':answer}}</view>
+        </view>
+        <view class='success'>
+          正确答案：<text>{{su_answer}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='select' wx:if="{{su_role == '填空题' ? true : false}}">
+      <view class='title'>答案</view>
+      <view class='wrap'>
+        <view class='myanswer'>
+          我的答案：<text class="{{answer.toString()==su_answer.toString()?'test':'111'}}">{{answer==''?'您没填写答案':answer}}</text>
+        </view>
+        <view class='success'>
+          正确答案：<text>{{su_answer}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='title'>解析</view>
+    <view class='parsing'>{{su_parsing==''?'暂无解析':su_parsing}}</view>
+  </view>
+</view>

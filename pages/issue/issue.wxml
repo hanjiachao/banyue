@@ -1,0 +1,11 @@
+<!--pages/issue/issue.wxml-->
+<view wx:for="{{list}}" bindtap='unwind' data-qu_id='{{item.qu_id}}' wx:key="{{}}" class="list {{item.open ? 'show' : ''}}">
+  <view class='header clearfix'>
+    <view class='icon left'>{{item.id}}</view>
+    <view class='drop-down right'>
+      <image mode='widthFix' src='../../image/icon8.png'></image>
+    </view>
+    <view class='title'>{{item.qu_content}}</view>
+  </view>
+  <view class='info'>{{item.qu_answer}}</view>
+</view>

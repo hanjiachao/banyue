@@ -1,0 +1,24 @@
+<!--pages/myStudy/myStudy.wxml-->
+<view class='conts'>
+  <view class='list clearfix' wx:for='{{infoList}}' wx:key=''>
+    <view class='videoBox left'>
+      <image class='video' src='{{item.v_cover}}'></image>
+      <view class='schedule'>
+        <view class='wrap'>
+          <view class='msg'>已学{{item.progress}}%</view>
+          <view class='box'>
+            <view class='content' style='width:{{item.progress}}%;'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='info'>
+      <view class='title'>{{item.v_name}}</view>
+      <view class='timer'>
+        <text class='text'>学习时长</text>
+        <text class='number'>{{item.study_duration}}</text>
+      </view>
+      <view class='btn' data-v_id='{{item.v_id}}' bindtap='clickTo'>继续学习</view>
+    </view>
+  </view>
+</view>

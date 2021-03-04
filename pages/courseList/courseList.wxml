@@ -1,0 +1,78 @@
+<!--pages/courseList/courseList.wxml-->
+<view class='conts'>
+  <view class='header clearfix'>
+    <view class='screen right' bindtap='screen'>
+      <image src='../../image/more.png'></image>
+    </view>
+    <view class='head'>
+      <scroll-view  class='tab' scroll-x="true">
+        <view class='title' bindtap='click'  data-id='0' data-ca_id=''>
+          <text>全部</text>
+          <view class="{{currentTab==0?'active':''}}"></view>
+        </view>
+        <view class='title' wx:for="{{tabList}}" wx:key="" data-id='{{index + 1}}' data-ca_id='{{item.ca_id}}' bindtap='click'>
+          <text>{{item.ca_name}}</text>
+          <view class="{{currentTab==index+1?'active':''}}"></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='scropll' wx:if='{{flag1}}'>
+    <view class='itemList' wx:for="{{courselist}}" wx:key="">
+      <view class='list clearfix' data-v_id='{{item.v_id}}' bindtap='details'>
+        <view class='imgBox left'>
+          <image class='bgImg' src='{{item.v_cover}}'></image>
+          <view class='mark'>{{item.v_label}}</view>
+        </view>
+        <view class='item'>
+          <view class='title'>{{item.v_name}}</view>
+          <view class='jingpin' wx:if="{{jingpin}}">
+            <view class='info'>
+              <view class='people'>
+                <image src='../../image/icon5.png'></image>
+                <text>{{item.v_see_num}}</text>
+              </view>
+              <view class='timer'>
+                <image src='../../image/calendar.png'></image>
+                <text>{{item.v_validity}}</text>
+              </view>
+            </view>
+          <view class='money' wx:if="{{isIos}}">精品课程￥{{item.v_price}}</view>
+          </view>
+          <view class='pintuan'  wx:if="{{pintuan}}">
+            <view class='info'>
+              <view class='people'>
+                <image src='../../image/icon5.png'></image>
+                <text>{{item.v_see_num}}</text>
+              </view>
+              <view class='timer'>
+                <image src='../../image/code.png'></image>
+                <text>{{item.v_validity}}</text>
+              </view>
+              <view class='team'>还差{{item.residue_num}}人成团</view>
+            </view>
+            <view class='money' wx:if="{{isIos}}">
+              <view class='num1'>拼团价￥{{item.v_group_price}}</view>
+              <view class='num2'>单价￥{{item.v_price}}</view>
+            </view>
+          </view>
+          <view class='mianfei' wx:if="{{mianfei}}">
+            <view class='info'>
+              <view class='people'>
+                <image src='../../image/icon5.png'></image>
+                <text>{{item.v_see_num}}</text>
+              </view>
+            </view>
+            <view class='money' wx:if="{{isIos}}">免费课程</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='fruitless' wx:if='{{flag2}}'>
+    <view class='img-box'>
+      <image mode='widthFix' src='../../image/results.png'></image>
+    </view>
+    <view class='text-results'>您查询的课程，暂时还没有，下次再来吧！</view>
+  </view>
+</view>

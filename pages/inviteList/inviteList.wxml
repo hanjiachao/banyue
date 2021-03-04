@@ -1,0 +1,13 @@
+<!--pages/integral/integral.wxml-->
+<view class='conts' wx:if="{{showPage}}">
+  <view class='panel'>
+    <view class='list clearfix' wx:for='{{list}}' wx:key='index'>
+	  <image class="avatar" src="{{item.us_headimg}}" mode="widthFix"></image>
+      <view class='info left'>
+        <view class='head'>{{item.us_nickname}}</view>
+        <view class='timer'>{{item.us_add_time}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="none" wx:if="{{!list.length}}">暂无邀请成员</view>
+</view>

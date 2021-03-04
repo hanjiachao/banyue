@@ -1,0 +1,22 @@
+<!--pages/parsing/parsing.wxml-->
+<view class='conts'>
+  <view class='head clearfix'>
+    <view class='text left'>简答题</view>
+    <view class='num right'><text>{{index}}</text>/{{count}}</view>
+  </view>
+  <view class='content'>
+    <view class='question'>{{su_question}}</view>
+    <view class='title'>参考答案</view>
+    <view class='reference'>{{su_answer}}</view>
+    <view class='title'>评分标准</view>
+    <view class='standard'>{{su_norm==''?'暂无评分标准':su_norm}}</view>
+    <view class='title'>自我评分</view>
+    <view class='ipt clearfix'>
+      <view class='icon right'>
+        <image src='../../image/icon8_active.png'></image>
+      </view>
+      <input placeholder='{{placeholder}}' placeholder-style='color: #787878;' bindinput='getScore' bindfocus='inputFocus' bindblur='inputBlur'></input>
+    </view>
+  </view>
+  <view class='submit' bindtap='submit'>保存得分</view>
+</view>

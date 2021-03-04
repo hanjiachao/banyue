@@ -1,0 +1,96 @@
+<!--pages/mine/mine.wxml-->
+<view class='header clearfix'>
+  <view class='headPortrait left' style='background:#fff;'>
+    <image mode='widthFix' src='{{headimg==""?"../../image/logo.png":headimg}}'></image>
+  </view>
+  <view class='signin right' bindtap='daka'>
+    <image class='icon' mode='widthFix' src='../../image/signin.png'></image>
+    <text>打卡</text>
+  </view>
+  <view class='test'>
+    <view class='title'>
+      <text class='name'>{{nickname==''?'XXX':nickname}}</text>
+      <image mode='widthFix' src='{{sexImg}}'></image>
+    </view>
+    <view class='info'>
+      学习总时长：<text class='time'>{{learning_time}}小时</text>
+      积分：<text class='score'>{{integral}}</text>
+    </view>
+  </view>
+</view>
+<view class='list clearfix'>
+  <view class='item left' bindtap='myCoursesTo'>
+    <image mode='widthFix' src='../../image/list-icon_9.png'></image>
+    <text>我的课程</text>
+  </view>
+  <view class='item left' bindtap='myTeamTo'>
+    <image mode='widthFix' src='../../image/list-icon_10.png'></image>
+    <text>我的拼团</text>
+  </view>
+  <view class='item left' bindtap='commission'>
+    <image mode='widthFix' src='../../image/list-icon_11.png'></image>
+    <text>我的佣金</text>
+  </view>
+  <view class='item left' bindtap='integral'>
+    <image mode='widthFix' src='../../image/list-icon_12.png'></image>
+    <text>我的积分</text>
+  </view>
+</view>
+<view class='navList'>
+  <view class='item' bindtap='profile'>
+    <image mode='widthFix' src='../../image/list-icon_13.png'></image>
+    <text>我的资料</text>
+  </view>
+  <view class='item' bindtap='promote'>
+    <image mode='widthFix' src='../../image/list-icon_14.png'></image>
+    <text>我的推广</text>
+  </view>
+  <view class='item' bindtap='myInvite'>
+    <image mode='widthFix' src='../../image/list-icon_14.png'></image>
+    <text>推广成员</text>
+  </view>
+  <view class='item' bindtap='mistakes'>
+    <image mode='widthFix' src='../../image/list-icon_15.png'></image>
+    <text>我的错题本</text>
+  </view>
+  <view class='item' bindtap='myStudy'>
+    <image mode='widthFix' src='../../image/list-icon_16.png'></image>
+    <text>我的学习</text>
+  </view>
+  <view class='item' bindtap='collectTo'>
+    <image mode='widthFix' src='../../image/list-icon_17.png'></image>
+    <text>我的收藏</text>
+  </view>
+  <view class='item' bindtap='footprint'>
+    <image mode='widthFix' src='../../image/list-icon_18.png'></image>
+    <text>打卡足迹</text>
+  </view>
+  <view class='item' bindtap='download'>
+    <image mode='widthFix' src='../../image/list-icon_19.png'></image>
+    <text>我的下载</text>
+  </view>
+</view>
+<!-- 打卡弹窗 -->
+<view class='shade' hidden='{{flag}}'>
+  <view class='conts'>
+    <image class='bg' mode='widthFix' src='../../image/bg11.png'></image>
+    <view class='panel'>
+      <view class='title'>打卡成功</view>
+      <view class='test'>恭喜您、获得{{experience}}积分！</view>
+      <button wx:if='{{iphoneFlag}}' class='btn' bindtap='shareTo'>分享到朋友圈</button>
+    </view>
+    <view class='cancel' bindtap='close'>
+      <image mode='widthFix' src='../../image/cancel1.png'></image>
+    </view>
+  </view>
+</view>
+<!-- 推广弹窗 -->
+<view class='shade' wx:if='{{flag1}}'>
+  <view class='content'>
+    <view class='title'>您的身份暂时还不是推广员！</view>
+    <view class='btn'>
+      <button class='close' bindtap='tuitionClose'>取消</button>
+      <button class='apply' bindtap='tuitionApply'>申请推广员</button>
+    </view>
+  </view>
+</view>

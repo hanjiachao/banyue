@@ -1,0 +1,73 @@
+/* pages/sheet/sheet.wxss */
+.conts .head{
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 25rpx;
+}
+.conts .head .title{
+  color: #333333;
+  font-size: 32rpx;
+}
+.conts .head .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .head .icon image{
+  width: 18rpx;
+  height: 32rpx;
+  transform: rotate(90deg)
+}
+.conts .select{
+  background: #fff;
+  padding: 55rpx 25rpx 50rpx;
+  margin-top: 15rpx;
+}
+.conts .content{
+  /* margin-bottom: 140rpx; */
+}
+.conts .select .title{
+  color: #333333;
+  font-size: 32rpx;
+  line-height: 30rpx;
+}
+.conts .select .item{
+  margin-top: 20rpx;
+}
+.conts .select .item .wrap{
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.conts .select .item .list{
+  width: 68rpx;
+  height: 68rpx;
+  border: 2rpx solid #4CCFA6;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 68rpx;
+  color: #4CCFA6;
+  font-size: 32rpx;
+  display: inline-block;
+  margin: 38rpx 0 0;
+}
+.conts .select .item .active{
+  background: #4CCFA6;
+  color: #fff;
+}
+.conts .select .item .list:nth-child(5n){
+  margin-right: 0;
+}
+.conts .submit{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0BC99D;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}

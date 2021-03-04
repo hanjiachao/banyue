@@ -1,0 +1,92 @@
+<!--pages/commission/commission.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='top clearfix'>
+      <text bindtap='strategy'>推广攻略</text>
+    </view>
+    <view class='content clearfix'>
+      <view class='item'>
+        <view class='title'>
+          <text class='text'>总佣金</text>
+          <text class='btn' bindtap='withdrawal'>提现</text>
+        </view>
+        <view class='num'>{{account}}</view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <text class='text'>销售总金额</text>
+        </view>
+        <view class='num'>{{count_sale}}</view>
+      </view>
+    </view>
+    <view class='rule'>提现规则：佣金满{{rule}}元才可提现</view>
+  </view>
+  <view class='panel'>
+    <view class='title clearfix' bindtap='history'>
+      <view class='icon left'>
+        <image src='../../../image/icon24.png'></image>
+      </view>
+      <view class='return right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='text'>结算历史</view>
+    </view>
+    <view class='item clearfix'>
+      <view class='test left'>已结算</view>
+      <view class='money right'>￥{{settlement}}</view>
+    </view>
+    <view class='item clearfix'>
+      <view class='test left'>待结算</view>
+      <view class='money right'>￥{{account}}</view>
+    </view>
+    <view class='details'>
+      <view class='title clearfix'>
+        <view class='icon left'>
+          <image src='../../../image/icon24.png'></image>
+        </view>
+        <view class='text'>奖励明细</view>
+      </view>
+      <view class='list' wx:for='{{infoList}}' wx:key=''>
+        <view class='top clearfix'>
+          <view class='user left'>{{item.name}}</view>
+          <view class='money right'>佣金{{item.bi_price}}</view>
+        </view>
+        <view class='timer'>{{item.timer}}</view>
+        <view class='info'>{{item.bi_remark}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 提现弹窗 -->
+<view class='shade' wx:if='{{flag1}}'>
+  <view class='wrap'>
+    <view class='content'>
+      <view class='ipt clearfix'>
+        <view class='iptBox left'>
+          <input placeholder='输入提现金额' value='{{val}}' placeholder-style='color:#CCCCCC;' bindinput='getvalue'></input>
+        </view>
+        <view class='text right' bindtap='allValue'>全部提现</view>
+      </view>
+      <view class='info'>可提现金额￥{{account}}</view>
+      <view class='btn' bindtap='applyFor'>提现到微信钱包</view>
+    </view>
+    <view class='close' bindtap='close'>
+      <image src='../../../image/cancel1.png'></image>
+    </view>
+  </view>
+</view>
+<!-- 攻略弹窗 -->
+<view class='shade' wx:if='{{flag2}}'>
+  <view class='panel'>
+    <image class='bg' mode='widthFix' src='../../../image/bg14.png'></image>
+    <view class='info'>
+      <!-- 引入模板 -->
+      <import src="../../../wxParse/wxParse.wxml" />
+      <!--这里data中article为bindName -->
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+  </view>
+  <view class='icon' bindtap='close' bindtap='shut'>
+    <image src='../../../image/close.png'></image>
+  </view>
+</view>

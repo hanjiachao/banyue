@@ -1,0 +1,69 @@
+<!--pages/profile/profileInfo/profileInfo.wxml-->
+<view class='conts'>
+  <view class='msg'>
+    <view class='items clearfix'>
+      <view class='title left'>昵称</view>
+      <view class='ipt'>{{nickname}}</view>
+    </view>
+    <view class='items clearfix' data-id='0' bindtap='write'>
+      <view class='title left'>性别</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{sex == ''?'未填写':sex}}</view>
+    </view>
+    <view class='items clearfix' data-id='1' bindtap='write'>
+      <view class='title left'>出生日期</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{birth == ''?'未填写':birth}}</view>
+    </view>
+  </view>
+  <view class='profession'>
+    <view class='items clearfix' data-id='2' bindtap='write'>
+      <view class='title left'>在校/在职</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{card_type == ''?'未填写':card_type}}</view>
+    </view>
+    <!-- <view class='items clearfix' data-id='3' bindtap='write'>
+      <view class='title left'>是否愿意兼职</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{part_time == ''?'未填写':part_time}}</view>
+    </view> -->
+  </view>
+  <view class='school'>
+    <view class='items clearfix' data-id='4' bindtap='write'>
+      <view class='title left'>最高学历</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{education == ''?'未填写':education}}</view>
+    </view>
+    <view class='items clearfix' data-id='5' bindtap='write'>
+      <view class='title left'>毕业学校</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{academy == ''?'未填写':academy}}</view>
+    </view>
+    <view class='items clearfix' data-id='6' bindtap='write'>
+      <view class='title left'>所学专业</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{major == ''?'未填写':major}}</view>
+    </view>
+    <view class='items clearfix' data-id='7' bindtap='write'>
+      <view class='title left'>毕业年份</view>
+      <view class='icon right'>
+        <image src='../../../image/icon8.png'></image>
+      </view>
+      <view class='ipt'>{{graduate_year == ''?'未填写':graduate_year}}</view>
+    </view>
+  </view>
+</view>

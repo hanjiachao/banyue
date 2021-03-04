@@ -1,0 +1,50 @@
+<!--pages/tuition/money/money.wxml-->
+<view class='conts' wx:if="{{applyFor}}">
+  <image mode='widthFix' src='../../../image/bg9.png'></image>
+  <view class='panel'>
+    <view class="img">
+      <image mode='widthFix' src='{{hdimg}}'></image>
+    </view>
+    <view class='btn' bindtap='apply'>申请成为推广员</view>
+    <view class='publicity'>{{content}}</view>
+    <view class='info'>简单快捷转发，分享出去，其他用户通过
+此分享成功在平台注册，推广员即可拿到
+被分享人积分。</view>
+  </view>
+</view>
+<view class='conts' wx:if="{{promote}}">
+  <image mode='widthFix' src='../../../image/bg9.png'></image>
+  <view class='panel'>
+    <view class="img">
+      <image mode='widthFix' src='{{hdimg}}'></image>
+    </view>
+    <view class='success'>您已经成为推广员，快去分享赚取学分吧！</view>
+    <view class='info'>简单快捷转发，分享出去，其他用户通过
+此分享成功在平台注册，推广员即可拿到
+被分享人积分。</view>
+    <view class='qrcode'>
+      <image mode='widthFix' src='{{qrcode}}'></image>
+    </view>
+  </view>
+</view>
+<view class='conts' wx:if="{{audit}}">
+  <image mode='widthFix' src='../../../image/bg9.png'></image>
+  <view class='panel'>
+    <view class="img">
+      <image mode='widthFix' src='{{hdimg}}'></image>
+    </view>
+    <view class='success'>您推广员的资料还在审核中，请耐心等待！</view>
+    <view class='info'>简单快捷转发，分享出去，其他用户通过
+此分享成功在平台注册，推广员即可拿到
+被分享人积分。</view>
+  </view>
+</view>
+<view class='mask' wx:if="{{flag}}">
+  <view class='content'>
+    <view class='title'>您提交的申请未通过！</view>
+    <view class='btn'>
+      <view class='btn1' bindtap='close'>取消</view>
+      <view class='btn2' bindtap='again'>重新申请</view>
+    </view>
+  </view>
+</view>

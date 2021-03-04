@@ -1,0 +1,39 @@
+<!--pages/integral/integral.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='title clearfix'>
+      <view class='integral left'>获得的积分</view>
+      <view class='details right' bindtap='details'>
+        <image mode='widthFix' src='../../image/icon9.png'></image>
+        <text>积分说明</text>
+      </view>
+    </view>
+    <view class='num'>{{integral}}<text>积分</text></view>
+  </view>
+  <view class='panel'>
+    <view class='title'>积分明细：</view>
+    <view class='list clearfix' wx:for='{{itemList}}' wx:key=''>
+      <view class='info left'>
+        <view class='head'>{{item.bi_remark}}</view>
+        <view class='timer'>{{item.bi_add_time}}</view>
+      </view>
+      <view class='number right'>{{item.bi_price}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹窗 -->
+<view class='shade' hidden="{{flag}}">
+  <view class='panel'>
+    <image class='bg' mode='widthFix' src='../../image/bg14.png'></image>
+    <view class='info'>
+      <!-- 引入模板 -->
+      <import src="../../wxParse/wxParse.wxml" />
+      <!--这里data中article为bindName -->
+      <template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+    </view>
+  </view>
+  <view class='icon' bindtap='close'>
+    <image src='../../image/close.png'></image>
+  </view>
+</view>

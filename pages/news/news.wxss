@@ -1,0 +1,29 @@
+/* pages/news/news.wxss */
+page{
+  background: #fff;
+}
+.conts{
+  padding: 0 25rpx;
+}
+.conts .list{
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.conts .list .title{
+  line-height: 55rpx;
+}
+.conts .list .title .type{
+  color: #333333;
+  font-size: 28rpx;
+  margin-right: 30rpx;
+  font-weight:500;
+}
+.conts .list .title .timer{
+  color: #999999;
+  font-size: 28rpx;
+}
+.conts .list .info{
+  color: #666666;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}

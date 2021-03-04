@@ -1,0 +1,14 @@
+<!--pages/comdetails/comdetails.wxml-->
+<view class='conts'>
+  <view class='title'>{{ar_title}}</view>
+  <view class='info clearfix'>
+    <view class='timer left'>{{date}}</view>
+    <view class='mark right'>
+      <text>{{ar_label}}</text>
+    </view>
+  </view>
+  <!-- 引入模板 -->
+  <import src="../../wxParse/wxParse.wxml" />
+  <!--这里data中article为bindName -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

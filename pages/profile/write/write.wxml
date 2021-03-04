@@ -1,0 +1,6 @@
+<!--pages/profile/write/write.wxml-->
+<view class='conts'>
+  <textarea value='' placeholder='{{text}}' auto-focus='false' bindinput='getinfo'></textarea>
+  <text>{{len}}/100</text>
+  <button bindtap='submit'>保存</button>
+</view>

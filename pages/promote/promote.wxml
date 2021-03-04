@@ -1,0 +1,27 @@
+<!--pages/promote/promote.wxml-->
+<view class='conts'>
+  <image mode='widthFix' src='../../image/bg15.png'></image>
+  <view class='panel'>
+    <view class='title'>邀请码</view>
+    <view class='invite'>{{inviteCode}}</view>
+    <view class='msg'>您的好友在注册时也可填写邀请码</view>
+    <view class='qrcode'>
+      <image src='{{sh_qrcode}}' bindtap="previewImage"></image>
+    </view>
+    <view class='text'>长按保存二维码可分享</view>
+    <view class='share clearfix'>
+      <button class='list' open-type='share' hover-class='none' bindtap='forwarding'>
+        <view class='icon'>
+          <image src='../../image/weixin.png'></image>
+        </view>
+        <view class='test'>微信</view>
+      </button>
+      <view class='list' open-type='share' hover-class='none'  bindtap='friends'>
+        <view class='icon'>
+          <image src='../../image/pengyouquan.png'></image>
+        </view>
+        <view class='test'>朋友圈</view>
+      </view>
+    </view>
+  </view>
+</view>

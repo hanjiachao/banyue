@@ -1,0 +1,65 @@
+/* pages/site/site.wxss */
+page{
+  background: #fff;
+}
+.header{
+  background: #fff;
+  padding: 30rpx 25rpx;
+  font-size: 28rpx;
+  color: #FF4C4C;
+  border-bottom: 2rpx solid #F2F3F4;
+}
+.info{
+  background: #fff;
+  padding: 30rpx 25rpx;
+}
+.info .title{
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.info .infoText{
+  font-size: 30rpx;
+  color: #666666;
+  margin-top: 30rpx;
+}
+.area{
+  padding: 30rpx 25rpx;
+  background: #fff;
+  border-top: 20rpx solid #F2F3F4;
+}
+.area title{
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.area .areaTitle{
+  text-align: center;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+}
+.area .areaTitle view{
+  display: inline-block;
+  width: 33.33%;
+}
+picker-view{
+  height: 500rpx;
+  color: #999999;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+picker-view view{
+  vertical-align:middle;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.picker-box{
+  border-top:1px solid transparent;
+  border-bottom:1px solid transparent;
+  border-color:#DDDDDD;
+}

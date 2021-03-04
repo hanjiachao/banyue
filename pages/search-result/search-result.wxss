@@ -1,0 +1,154 @@
+/* pages/search-result/search-result.wxss */
+page{
+  background: #fff;
+  height: 100%;
+}
+.header{
+  background:  #0BC99D;
+  padding: 15rpx 24rpx;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+.header .imgBox{
+  width: 46rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+.header .imgBox image{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.header .iptBox{
+  margin-right: 60rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  overflow: hidden;
+  background: #00B88D;
+}
+.header .iptBox .img{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .iptBox .img .search{
+  width: 25rpx;
+  margin-left: 20rpx;
+}
+.header .iptBox .img .cancel{
+  width: 30rpx;
+  margin-right: 20rpx;
+}
+.header .ipt{
+  height: 100%;
+  margin: 0 60rpx;
+  font-size: 30rpx;
+}
+.header .ipt input{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+.tab{
+  padding: 15rpx 25rpx;
+  background:  #0BC99D;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 98rpx;
+  z-index: 999;
+}
+.tab .tab-item{
+  display: inline-block;
+  width: 33.33%;
+  position: relative;
+}
+.tab .tab-item .active{
+  position: absolute;
+  left: 60rpx;
+  bottom: 0;
+  width: 115rpx;
+  height: 6rpx;
+  background: #fff;
+}
+.conts{
+  height: 100%;
+}
+swiper{
+  padding: 15rpx 25rpx;
+  margin-top: 200rpx;
+  height: 100%;
+}
+.list{
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #CCCCCC;
+}
+.list:last-child{
+  border-bottom: 0;
+}
+.list .imgBox{
+  width: 125rpx;
+  height: 125rpx;
+  position: relative;
+}
+.list .imgBox .bg{
+  width: 100%;
+  height: 100%;
+}
+.list .imgBox .mark{
+  width: 70rpx;
+  height: 36rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.list .info{
+  margin-left: 150rpx;
+}
+.list .info .title{
+  font-size: 28rpx;
+  color:  #333333 ;
+  line-height: 40rpx;
+}
+.list .info .sort{
+  font-size: 26rpx;
+  color: #FF4C4C;
+  line-height: 40rpx;
+}
+.list .info .sort .money{
+  color:  #808080 ;
+  margin-left: 20rpx;
+}
+.list .info .icon{
+  width: 25rpx;
+  height: 25rpx;
+}
+.list .info .number{
+  font-size: 26rpx;
+  color: #808080;
+  margin-left: 10rpx;
+  display: line-block;
+}
+.conts .img-box{
+  width: 332rpx;
+  height: 284rpx;
+  margin: 170rpx auto 80rpx;
+}
+.conts .img-box image{
+  width: 100%;
+  height: 100%;
+}
+.conts .text-results{
+  color: #999999;
+  font-size: 32rpx;
+  text-align: center;
+}

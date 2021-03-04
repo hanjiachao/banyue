@@ -1,0 +1,63 @@
+/* pages/search/search.wxss */
+page{
+  background: #fff;
+}
+.header{
+  background: #0BC99D;
+  padding: 15rpx 24rpx;
+}
+.header .cancel{
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 70rpx;
+}
+.header .conts{
+  border-radius: 35rpx;
+  margin-right: 90rpx;
+  overflow: hidden;
+  background: #09B38B;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+.header .conts image{
+  width: 30rpx;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.header .conts .ipt{
+  margin-left: 20rpx;
+}
+.header .conts .ipt input{
+  font-size: 30rpx;
+  color: #fff;
+}
+.panel{
+  padding: 10rpx 24rpx;
+}
+.panel .title{
+  color: #666666;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+.panel .title image{
+  width: 27rpx;
+  height: 30rpx;
+}
+.panel text{
+  color: #000;
+  font-size: 30rpx;
+  border: 1rpx solid #C4C4C4;
+  border-radius: 50rpx;
+  padding: 10rpx 20rpx;
+  margin-right: 20rpx;
+  max-width: 260rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+.panel text.active{
+  border-color: #00B389;
+  color: #00B389;
+}

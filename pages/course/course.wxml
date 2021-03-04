@@ -1,0 +1,18 @@
+<!--pages/course/course.wxml-->
+<view class='content'>
+  <view class='item' bindtap='courseList' data-text='精品'>
+    <image class='img' mode='widthFix' src='../../image/bg1.png'></image>
+    <text class='title'>精品课程</text>
+    <image class='btn' mode='widthFix' src='../../image/btnIcon1.png'></image>
+  </view>
+  <view class='item' bindtap='courseList' data-text="拼团" wx:if="{{iphoneFlag}}">
+    <image class='img' mode='widthFix' src='../../image/bg2.png'></image>
+    <text class='title'>火热拼团</text>
+    <image class='btn' mode='widthFix' src='../../image/btnIcon2.png'></image>
+  </view>
+  <view class='item'  bindtap='courseList' data-text="免费">
+    <image class='img' mode='widthFix' src='../../image/bg3.png'></image>
+    <text class='title'>限时课程</text>
+    <image class='btn' mode='widthFix' src='../../image/btnIcon3.png'></image>
+  </view>
+</view>

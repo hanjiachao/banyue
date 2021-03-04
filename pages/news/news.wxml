@@ -1,0 +1,10 @@
+<!--pages/news/news.wxml-->
+<view class='conts'>
+  <view class='list' wx:for='{{newsList}}' wx:key=''>
+    <view class='title'>
+      <text class='type'>{{item.me_title}}</text>
+      <text class='timer' decode="{{true}}">{{item.time}}</text>
+    </view>
+    <view class='info'>{{item.me_content}}</view>
+  </view>
+</view>

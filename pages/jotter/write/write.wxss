@@ -1,0 +1,140 @@
+/* pages/jotter/write/write.wxss */
+page{
+  height: 100%;
+}
+.conts{
+  position: relative;
+  height: 100%;
+}
+.conts .header{
+  height: 270rpx;
+  color: #fff;
+  padding: 25rpx;
+  background: #0BC99D;
+}
+.conts .header .type{
+  font-size: 34rpx;
+  font-weight: bold;
+  line-height: 30rpx;
+}
+.conts .header .number{
+  background: #02B68E;
+  border-radius: 18rpx;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  padding: 0 20rpx;
+}
+.conts .content{
+  position: absolute;
+  top: 85rpx;
+  left: 25rpx;
+  right: 25rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+}
+.conts .content .info{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.conts .content .select{
+  padding: 0 45rpx;
+  margin-top: 20rpx;
+}
+.conts .content .select .options{
+  line-height: 50rpx;
+}
+.conts .content .select .icon{
+  margin-top: 5rpx;
+}
+.conts .content .select .icon image{
+  width: 38rpx;
+  height: 38rpx;
+}
+.conts .content .select .text{
+  color: #666666;
+  font-size: 28rpx;
+  margin-left: 75rpx;
+}
+.conts .operation{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+  background: #0BC99D;
+  color: #fff;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.conts .operation .btn{
+  width: 50%;
+  text-align: center;
+  border-right: 2rpx solid #fff;
+  box-sizing: border-box;
+}
+.conts .operation .btn:last-child{
+  border: 0;
+}
+.conts .foot{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  padding: 0 65rpx;
+}
+.conts .foot .icon{
+  height: 100%;
+  display: flex;
+  align-items: center
+}
+.conts .foot image{
+  width: 42rpx;
+  height: 42rpx;
+}
+.conts .foot .timer{
+  text-align: center;
+  color: #333333;
+  font-size: 26rpx;
+}
+.conts .content .result{
+  margin-top: 50rpx;
+}
+.conts .content .result .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .content .result .ipt{
+  background: #F0F0F0;
+  padding: 20rpx 50rpx;
+  color: #B3B3B3;
+  font-size: 28rpx;
+  margin: 30rpx 0 60rpx;
+}
+.conts .content .result .btn{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 700rpx;
+  background: #4CCFA6;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  height: 85rpx;
+  line-height: 85rpx;
+  border-radius: 10rpx;
+}
+.score{
+  background: #4CCFA6;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+}

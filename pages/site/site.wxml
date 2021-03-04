@@ -1,0 +1,28 @@
+<!--pages/site/site.wxml-->
+<view class='header'>请先选择报考地区，为您提供更准确的资讯</view>
+<view class='info'>
+  <view class='title'>已选地区</view>
+  <view class='infoText'>{{province}}/{{city}}/{{county}}</view>
+</view>
+<view class='area'>
+  <view class='title'>省份地区</view>
+  <view class='areaTitle'>
+    <view class='item'>省份</view>
+    <view class='item'>城市</view>
+    <view class='item'>区县</view>
+  </view>
+  <picker-view value="{{value}}" indicator-class="picker-box" bindchange="bindChange" indicator-style = "height: 50rpx;">
+    <!-- 省 -->
+    <picker-view-column class="">
+      <view  wx:for="{{provinces}}" wx:for-item="sheng" wx:key="" data-id='{{sheng.id}}'>{{sheng.name}}</view>
+    </picker-view-column>
+    <!-- 市 -->
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="" data-id='{{item.id}}'>{{item.name}}</view>
+    </picker-view-column>
+    <!-- 县 -->
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="" data-id='{{item.id}}'>{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

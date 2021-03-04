@@ -1,0 +1,19 @@
+<!--pages/subject/subject.wxml-->
+<view class='conts'>
+  <view class='list clearfix' wx:for='{{infoList}}' wx:key='' data-ca_id='{{item.ca_id}}' data-status='{{item.pay_status}}' data-role='{{item.role}}' data-integral='{{item.ca_integral}}' data-ca_time='{{item.ca_time}}' bindtap='answer'>
+    <view class='text left'>{{item.ca_name}}</view>
+    <view class='icon right'>
+      <image src='../../image/write.png'></image>
+    </view>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{integral}}'>
+  <view class='wrap'>
+    <view class='title'>想要在线模拟这份题，需要消耗
+{{grade}}积分哦！</view>
+    <view class='btn'>
+      <view class='close' bindtap='close'>取消</view>
+      <view class='consume' bindtap='consume'>确认消耗</view>
+    </view>
+  </view>
+</view>

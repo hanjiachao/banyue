@@ -1,0 +1,171 @@
+/* pages/myCourses/myCourses.wxss */
+page{
+  background: #fff;
+}
+.conts .header{
+  height: 85rpx;
+  background: #0BC99D;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.conts .content{
+  margin-top: 85rpx;
+}
+.conts .header .items{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.conts .header .items .title{
+  display: inline-block;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  line-height: 85rpx;
+  position: relative;
+}
+.conts .header .items .title .active{
+  height: 6rpx;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10rpx;
+}
+.conts swiper{
+  position: fixed;
+  top: 90rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+.conts swiper swiper-item scroll-view{
+  width: 100%;
+  height: 93%;/*动态高度*/
+}
+.conts .lists{
+  padding: 30rpx 0;
+  margin: 0 25rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .lists .head{
+  color: #333333;
+  height: 50rpx;
+}
+.conts .lists .head .timer{
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+.conts .lists .head .state{
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.conts .lists .item .img{
+  width: 125rpx;
+  height: 125rpx;
+}
+.conts .lists .item .img image{
+  width: 100%;
+  height: 100%;
+}
+.conts .lists .item .info{
+  margin-left: 155rpx;
+}
+.conts .lists .item .info .text{
+  font-size: 28rpx;
+  color: #000000;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.conts .lists .item .info .msg{
+  color: #808080;
+  font-size: 26rpx;
+  height: 50rpx;
+  margin-top: 5rpx;
+}
+.conts .lists .item .info .msg image{
+  width: 30rpx;
+  height: 25rpx;
+}
+.conts .lists .item .info .msg text{
+  margin: 0 30rpx 0 7rpx;
+}
+.conts .lists .item .info .end{
+  font-size: 24rpx;
+  color: #808080;
+  margin-top: -8rpx;
+}
+.conts .lists .item .money{
+  color: #FF4C4C;
+  font-size: 26rpx;
+}
+.conts .lists .foot{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.conts .lists .foot .number{
+  color: #333333;
+  font-size: 24rpx;
+}
+.conts .lists .foot .btn .bgGreen{
+  color: #FFFFFF;
+  font-size: 26rpx;
+  margin-left: 25rpx;
+  background: #0BC99D;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  display: inline-block;
+  padding: 0 25rpx;
+  border: 2rpx solid transparent;
+}
+.conts .lists .foot .btn .cancel{
+  font-size: 26rpx;
+  margin-left: 25rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  display: inline-block;
+  padding: 0 25rpx;
+  border: 2rpx solid transparent;
+  background: #fff;
+  border-color: #808080;
+  color: #808080;
+}
+/* 苹果支付样式 */
+.iphoneStyle{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+.iphoneStyle .content{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 60rpx 30rpx 40rpx;
+}
+.iphoneStyle .content .title{
+  color:#333;
+  font-size:32rpx;
+  line-height:50rpx;
+  white-space: normal;
+}
+.iphoneStyle .content cover-image{
+  width:156rpx;
+  height:156rpx;
+  margin:20rpx auto 0;
+}

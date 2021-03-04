@@ -1,0 +1,29 @@
+/* pages/course/course.wxss */
+.content{
+  background: #F2F3F4;
+  padding: 45rpx 25rpx;
+}
+.content .item{
+  margin-top: 50rpx; 
+  position: relative;
+}
+.content .item:first-child{
+  margin-top: 0;
+}
+.content .item .img{
+  width: 100%;
+}
+.content .item .title{
+  position: absolute;
+  top: 45rpx;
+  left: 110rpx;
+  font-size: 32rpx;
+  line-height: 40rpx;
+}
+.content .item .btn{
+  position: absolute;
+  bottom: 48rpx;
+  right: 48rpx;
+  width: 190rpx;
+  height: 74rpx;
+}

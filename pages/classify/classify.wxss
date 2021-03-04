@@ -1,0 +1,65 @@
+/* pages/subject/subject.wxss */
+page{
+  background: #fff;
+}
+.conts{
+  padding: 0 25rpx;
+}
+.conts .list{
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 2rpx solid #DBDBDB;
+}
+.conts .list .text{
+  color: #333333;
+  font-size: 30rpx;
+}
+.conts .list .icon{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conts .list .icon image{
+  width: 40rpx;
+  height: 34rpx;
+}
+.unregistered{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+/* 消耗积分 */
+.wrap{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.wrap .title{
+  color: #333333;
+  font-size: 32rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+  padding: 85rpx 70rpx 65rpx;
+  line-height: 50rpx;
+}
+.wrap .btn view{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 36rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #333333;
+}
+.wrap .btn .consume{
+  background: #0BC99D;
+  color: #fff;
+}

@@ -1,0 +1,9 @@
+<!--pages/downloadList/downloadList.wxml-->
+<view class='conts'>
+  <view class='list clearfix' wx:for='{{infoList}}' wx:key=''>
+    <view class='title left'>{{item.ma_title}}</view>
+    <view class='icon right' data-ma_id='{{item.ma_id}}' data-path='{{item.ma_path}}' bindtap='download'>
+      <image src='../../image/list-icon_19_1.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+/* pages/grade/grade.wxss */
+page{
+  background: #fff;
+}
+.conts .head{
+  background: #0BC99D;
+  padding: 25rpx;
+}
+.conts .head .title{
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 30rpx;
+}
+.conts .head .score{
+  width: 370rpx;
+  margin: 60rpx auto 45rpx;
+  font-size: 50rpx;
+  color: #fff;
+  text-align: center;
+}
+.conts .head .score .num{
+  font-size: 116rpx;
+  margin-right: 20rpx;
+}
+.conts .head .info{
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+.conts .content{
+  padding: 55rpx 25rpx 120rpx;
+}
+.conts .content .title{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+.conts .content .table{
+  margin-top: 40rpx;
+  border: 2rpx solid #999999;
+}
+.conts .content .table .th{
+  color: #333333;
+  font-size: 28rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 2rpx solid #999999;
+}
+.conts .content .table .th .td{
+  width: 33.33%;
+  text-align: center;
+  display: inline-block;
+  border-right: 2rpx solid #999999;
+  box-sizing: border-box;
+}
+.conts .content .table .th .td:last-child{
+  border: 0;
+}
+.conts .content .table .tr{
+  border-bottom: 2rpx solid #999999;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #222222;
+  font-size: 32rpx;
+}
+.conts .content .table .tr:last-child{
+  border: 0;
+}
+.conts .content .table .tr .td{
+  width: 33.33%;
+  text-align: center;
+  display: inline-block;
+  border-right: 2rpx solid #999999;
+  box-sizing: border-box;
+}
+.conts .content .table .tr .td:last-child{
+  border: 0;
+}
+.foot{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0BC99D;
+  color: #fff;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.foot view{
+  width: 50%;
+  border-right: 2rpx solid #fff;
+  box-sizing: border-box;
+}
+.foot .parsing{
+  border-right: 0;
+}

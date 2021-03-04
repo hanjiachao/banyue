@@ -1,0 +1,93 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/authorize/authorize",
+    "pages/collectDetails/collectDetails",
+    "pages/jotter/classify/classify",
+    "pages/jotter/parsing/parsing",
+    "pages/jotter/write/write",
+    "pages/jotter/look/look",
+    "pages/answer/answer",
+    "pages/classify/classify",
+    "pages/allQuestions/answer/answer",
+    "pages/allQuestions/result/result",
+    "pages/sheet/sheet",
+    "pages/parsing/parsing",
+    "pages/grade/grade",
+    "pages/explain/explain",
+    "pages/login/login",
+    "pages/myTeam/myTeam",
+    "pages/commission/mycommission/mycommission",
+    "pages/commission/settlement/settlement",
+    "pages/courseDetails/courseDetails",
+    "pages/screen/screen",
+    "pages/indent/indent",
+    "pages/courseList/courseList",
+    "pages/mockExam/mockExam",
+    "pages/profile/write/write",
+    "pages/profile/profileInfo/profileInfo",
+    "pages/community/community",
+    "pages/issue/issue",
+    "pages/news/news",
+    "pages/myCourses/myCourses",
+    "pages/live/live",
+    "pages/promote/promote",
+    "pages/download/download",
+    "pages/downloadList/downloadList",
+    "pages/footprint/footprint",
+    "pages/collect/collect",
+    "pages/mine/mine",
+    "pages/myStudy/myStudy",
+    "pages/tuition/money/money",
+    "pages/tuition/apply/apply",
+    "pages/site/site",
+    "pages/notice/notice",
+    "pages/integral/integral",
+    "pages/question/question",
+    "pages/course/course",
+    "pages/logs/logs",
+    "pages/search/search",
+    "pages/exams/exams",
+    "pages/mistakes/mistakes",
+    "pages/comdetails/comdetails",
+    "pages/search-result/search-result",
+    "pages/inviteList/inviteList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#03CA9E",
+    "navigationBarTitleText": "半月讲坛",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#01C598",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/icon_1.png",
+        "iconPath": "image/icon_2.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/icon_3.png",
+        "iconPath": "image/icon_4.png",
+        "pagePath": "pages/question/question",
+        "text": "题库"
+      },
+      {
+        "selectedIconPath": "image/icon_7.png",
+        "iconPath": "image/icon_8.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序的位置接口"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

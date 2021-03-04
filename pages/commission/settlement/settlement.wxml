@@ -1,0 +1,7 @@
+<!--pages/commission/settlement/settlement.wxml-->
+<view class='conts'>
+  <view class='list clearfix' wx:for='{{list}}' wx:key=''>
+    <view class='title left'>{{item.timer}}</view>
+    <view class='info right'>结算金额：{{item.money}}</view>
+  </view>
+</view>

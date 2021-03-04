@@ -1,0 +1,168 @@
+/* pages/mockExam/mockExam.wxss */
+page{
+  background: #fff;
+}
+.conts{
+  padding: 0 25rpx;
+}
+.conts .header{
+  color: #FF4C4C;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.conts .list{
+  margin-top: 10rpx;
+}
+.conts .list .title{
+  display: flex;
+  align-items: center;
+}
+.conts .list .title image{
+  width: 6rpx;
+  height: 35rpx;
+}
+.conts .list .title text{
+  color: #333333;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin-left: 25rpx;
+}
+.conts .list .item{
+  position: relative;
+  margin-top: 20rpx;
+}
+.conts .list .item .bg{
+  width: 100%;
+}
+.conts .list .item .info{
+  position: absolute;
+  top: 70rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+.conts .list .item .info .kind{
+  width: 33.33%;
+  vertical-align: top;
+  display: inline-block;
+}
+.conts .list .kind .icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+.conts .list .kind .icon image{
+  width: 100%;
+  height: 100%;
+}
+.conts .list .kind .msg{
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  width:220rpx;
+  margin:0 auto;
+}
+.conts .list .kind .text{
+  color: #fff;
+  font-size: 24rpx;
+}
+.unregistered{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0 , 0 , 0 , .5);
+  z-index: 999;
+}
+.contents{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 60rpx 30rpx 40rpx;
+}
+.contents .title{
+  color: #333333;
+  font-size: 32rpx;
+  height: 80rpx;
+  padding: 0 25rpx;
+  line-height: 40rpx;
+}
+.contents .btn{
+  color: #FFFFFF;
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}
+.contents .btn view{
+  width: 250rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+}
+.contents .btn .login{
+  background: #0BC99D
+}
+.contents .btn .cancel{
+  background: #CCCCCC
+}
+/* 消耗积分 */
+.wrap{
+  position: absolute;
+  top: 315rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.wrap .title{
+  color: #333333;
+  font-size: 32rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+  padding: 85rpx 70rpx 65rpx;
+  line-height: 50rpx;
+}
+.wrap .btn view{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 36rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #333333;
+}
+.wrap .btn .consume{
+  background: #0BC99D;
+  color: #fff;
+}
+.homePage{
+  position: fixed;
+  bottom: 300rpx;
+  right: 20rpx;
+  z-index: 999;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(0 , 0 , 0 , .5)
+}
+.homePage cover-image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+.homePage .text{
+  color: #00C497;
+  font-size: 24rpx;
+}

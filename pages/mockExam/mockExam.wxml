@@ -1,0 +1,46 @@
+<!--pages/mockExam/mockExam.wxml-->
+<view class='conts'>
+  <view class='header' data-ar_id='{{ar_id}}' bindtap='comdetail'>最新消息：{{ar_title}}</view>
+  <view class='list' wx:for='{{infoList}}' wx:key='' wx:for-item='info'>
+    <view class='title'>
+      <image src='{{info.ca_path}}'></image>
+      <text>{{info.ca_name}}</text>
+    </view>
+    <view class='item'>
+      <image class='bg' mode='widthFix' src='{{info.ca_image}}'></image>
+      <view class='info'>
+        <view class='kind' wx:for='{{info.next_list}}' wx:key='' data-ca_id='{{item.ca_id}}' data-role='{{item.role}}' data-third='{{item.is_third}}' data-ca_time='{{item.ca_time}}' data-status='{{item.pay_status}}' bindtap='answer'>
+          <view class='icon'>
+            <image src='{{item.ca_image}}'></image>
+          </view>
+          <view class='msg'>{{item.ca_name}}</view>
+          <view style='color:#FFFFFF; font-size: 20rpx;'>{{item.ca_remark != ''?'（' + item.ca_remark + '）':''}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{flag}}'>
+  <view class='contents'>
+    <view class='title'>您还未绑定信息，请前去绑定信息</view>
+    <view class='btn clearfix'>
+      <view class='login left' bindtap='register'>绑定</view>
+      <view class='cancel right' bindtap='abolish'>取消</view>
+    </view>
+  </view>
+</view>
+<view class='unregistered' wx:if='{{integral}}'>
+  <view class='wrap'>
+    <view class='title'>想要在线模拟这份题，需要消耗
+{{grade}}积分哦！</view>
+    <view class='btn'>
+      <view class='close' bindtap='close'>取消</view>
+      <view class='consume' bindtap='consume'>确认消耗</view>
+    </view>
+  </view>
+</view>
+<!-- 分享回到首页 -->
+<cover-view class='homePage' wx:if='{{homePageFlag}}' bindtap='homePage'>
+  <cover-image src='../../image/icon_1.png'></cover-image>
+  <cover-view class='text'>首页</cover-view>
+</cover-view>

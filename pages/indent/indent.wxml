@@ -1,0 +1,108 @@
+<!--pages/indent/indent.wxml-->
+<view class='conts'>
+  <view class='header'>
+    <view class='title'>商品信息</view>
+    <view class='info clearfix'>
+      <view class='img left'>
+        <image src='{{v_cover}}'></image>
+      </view>
+      <view class='text'>
+        <view class='head'>{{v_name}}</view>
+        <view class='money'>
+          <view wx:if='{{order_type=="拼团"?true:false}}'>拼团价￥{{v_group_price}}</view>
+          <view wx:if='{{order_type=="精品"?true:false}}'>精品价￥{{v_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='integral'>
+    <view class='head clearfix'>
+      <view class='checkbox left' bindtap='shiyongjifen'>
+        <label>
+          <checkbox checked='{{selected1}}'/>使用我的积分
+        </label>
+      </view>
+      <view class='ipt right'>
+        <input placeholder='输入积分' disabled='{{flag}}' placeholder-style='color:#CCCCCC;font-size:24rpx;' bindinput='getIntegral'></input>
+        <text>个</text>
+      </view>
+      <view class='num'>{{integral}}可用</view>
+    </view>
+    <view class='rule clearfix'>
+      <view class='text left'>
+        <image src='../../image/icon_21.png'></image>
+        <text>积分抵现</text>
+      </view>
+      <view class='num right'>-￥{{offset_price}}</view>
+    </view>
+  </view>
+  <view class='pay'>
+    <view class='title'>支付方式</view>
+    <view class='info clearfix'>
+      <view class='mode left'>
+        <view class='icon'>
+          <image src='../../image/weixin1.png'></image>
+        </view>
+        <text>微信支付</text>
+      </view>
+      <view class='radio right' bindtap='payWay'>
+        <radio checked='{{selected2}}'></radio>
+      </view>
+    </view>
+    <view class='checkbox'>
+      <label>
+        <checkbox bindtap='yuedu' checked='{{selected3}}'></checkbox>
+      </label>
+      <text bindtap='agreement'>我已经阅读并同意《用户付费协议》</text>
+    </view>
+  </view>
+  <view class='footer clearfix'>
+    <view class='money left'>
+      <text class='text'>实付金额:</text>
+      <text class='num'>￥{{moneyNum}}</text>
+    </view>
+    <view class='btn left' bindtap='submit'>提交订单</view>
+  </view>
+</view>
+<view class='agreement' wx:if='{{shade}}'>
+  <view class='wrap'>
+    <image class='bg' mode='widthFix' src='../../image/bg14.png'></image>
+    <view class='info'>
+      <view class='head clearfix'>
+        <view class='icon left'>
+          <image src='../../image/icon18.png'></image>
+        </view>
+        <view class='text left'>协议</view>
+      </view>
+      <view class='title'>《用户付费协议书》</view>
+      <view class='item'>注册成为用户之前，请认真阅读本《用
+户协议》（以下简称“协议”），确保您充分
+理解本协议中各条款。请您审慎阅读并选择
+接受或不接受本协议。除非您接受本协议所
+有条款，否则您无权注册、登录或使用本协
+议所涉服务。您注册、登录、使用等行为将
+视为对本协议的接受，并同意接受本协议各
+项条款的约束。注册成为用户之前，请认真
+户协议》（以下简称“协议”），确保您充分
+理解本协议中各条款。请您审慎阅读并选择
+接受或不接受本协议。除非您接受本协议所
+有条款，否则您无权注册、登录或使用本协
+议所涉服务。您注册、登录、使用等行为将
+视为对本协议的接受，并同意接受。</view>
+    </view>
+  </view>
+  <view class='icon' bindtap='close'>
+    <image src='../../image/close.png'></image>
+  </view>
+</view>
+<!-- 支付成功 -->
+<view class='successful' wx:if='{{successful}}'>
+  <view class='panel'>
+    <view class='title'>恭喜您购买成功！</view>
+    <view class='info'>请在我的-我的{{text}}中查看</view>
+    <view class='btn clearfix'>
+      <view class='leave left' bindtap='leave'>我的{{text}}</view>
+      <view class='return right' bindtap='returns'>返回</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,101 @@
+/* pages/community/community.wxss */
+page{
+  background: #fff;
+}
+.warp{
+  height: 100%;
+}
+.header{
+  padding: 15rpx 24rpx;
+  background: #0BC99D;
+}
+.header .box{
+   background:  #00B88D;
+   border-radius: 35rpx;
+   height: 70rpx;
+   overflow: hidden;
+}
+.header .img{
+  height: 100%;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.header .img image{
+  width: 24rpx;
+  height: 25rpx;
+  align-items: center;
+}
+.header .ipt{
+  margin-left: 60rpx;
+  font-size: 30rpx;
+  height: 100%;
+}
+.header .ipt input{
+  height: 100%;
+  line-height: 70rpx;
+  color: #fff;
+}
+.conts{
+  padding: 15rpx 24rpx;
+  background: #fff;
+}
+.conts .list{
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #CCCCCC;
+}
+.conts .list:last-child{
+  border-bottom: 0;
+}
+.conts .list .imgBox{
+  position: relative;
+}
+.conts .list .img{
+  width: 137rpx;
+  height: 137rpx;
+}
+.conts .list .mark{
+  width: 70rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.conts .list .info{
+  margin-left: 150rpx;
+}
+.conts .list .info .title{
+  font-size: 28rpx;
+  color: #333333;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.conts .list .info .text{
+  font-size: 26rpx;
+  color: #999999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 75rpx;
+}
+.conts .list .info .time{
+  text-align: right;
+  color: #999999;
+  font-size:24rpx;
+}
+.conts .img-box{
+  width: 332rpx;
+  height: 284rpx;
+  margin: 150rpx auto 80rpx;
+}
+.conts .img-box image{
+  width: 100%;
+  height: 100%;
+}
+.conts .text-results{
+  color: #999999;
+  font-size: 32rpx;
+  text-align: center;
+}
