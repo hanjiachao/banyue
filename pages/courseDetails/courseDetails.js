@@ -123,6 +123,12 @@ Page({
   },
   //获取信息详情
   getInfo: function (msg) {
+	  if (!common.get_userinfo()){
+	    // wx.redirectTo({
+	    //   url: '/pages/authorize/authorize',
+	    // })
+		return false
+	  }
     var that = this
     common.ajax({
       url: 'Home/Video/getVideoDetail',
@@ -810,6 +816,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  let pages = getCurrentPages()
+	  if(options.v_id && options.text && pages.length == 1 && !common.get_userinfo()){
+		  let scenario = {
+			  path: pages[0].route,
+			  query: options,
+			  scene: 1011
+		  }
+		  wx.setStorageSync('scenario', scenario)
+		  setTimeout(()=>{
+		    wx.redirectTo({
+		      url: '/pages/authorize/authorize',
+		    })
+		  },1000)
+	  }
 	var that = this;
     var isIos = wx.getStorageSync('appModel').indexOf("Android") != -1
     if (!wx.getStorageSync('text')){
@@ -1004,7 +1024,7 @@ Page({
   onShow: function (options) {
     var scenario = wx.getStorageSync("scenario")
     var boole = wx.getStorageSync("boole");
-    if (scenario.scene == 1007 || scenario.scene == 1008) {
+    if (scenario.scene == 1007 || scenario.scene == 1008 || scenario.scene == 1011) {
       this.setData({
         homePageFlag: true
       }) 

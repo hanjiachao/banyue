@@ -22,7 +22,7 @@ App({
                 if (res.result.register_status) {
                   common.set_userinfo(res.result)
                   var scenario = wx.getStorageSync("scenario")
-                  if (scenario.scene == 1007 || scenario.scene == 1008) {
+                  if (scenario.scene == 1007 || scenario.scene == 1008 || scenario.scene == 1011) {
                     var msg = '',router = scenario.path
                     for(var i in scenario.query){
                       msg += i + '=' + scenario.query[i] + '&'
@@ -64,7 +64,7 @@ App({
         info.access_token = res.result.access_token
         common.set_userinfo(info)
         var scenario = wx.getStorageSync("scenario")
-        if (scenario.scene == 1007 || scenario.scene == 1008) {
+        if (scenario.scene == 1007 || scenario.scene == 1008 || scenario.scene == 1011) {
           var msg = '', router = scenario.path
           for (var i in scenario.query) {
             msg += i + '=' + scenario.query[i] + '&'
@@ -108,7 +108,7 @@ App({
   onShow: function (options) {
     var scenario = options
     wx.setStorageSync('scenario', scenario)
-    if (scenario.scene == 1007 || scenario.scene == 1008) {
+    if (scenario.scene == 1007 || scenario.scene == 1008 || scenario.scene == 1011) {
       if (common.get_userinfo()){
         console.log(1111)
       }else{
@@ -124,6 +124,18 @@ App({
         },1000)
       }
     }
+	// if(!common.get_userinfo()){
+		// let path = options.path
+		// let params = JSON.stringify(options.query)
+		// if(path.indexOf('courseDetails') > -1){
+		// 	wx.redirectTo({
+		// 	  url: `/pages/authorize/authorize?path=${path}&params=${params}`,
+		// 	})
+		// }
+	// 	wx.redirectTo({
+	// 	  url: '/pages/authorize/authorize',
+	// 	})
+	// }
   },
   onHide: function (options) {
     // console.log(options)

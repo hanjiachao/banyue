@@ -6,13 +6,29 @@ Page({
     share_code:"",
     logo:"",
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+	path: '',
+	params: ''
   },
   onLoad: function (options) {
     var that = this;
     var scenario = wx.getStorageSync("scenario")
     // 查看是否授权
     var url = ''
+	// if(options.path && options.params){
+	// 	let params = JSON.parse(options.params)
+	// 	let paramsStr = '?'
+	// 	for(let key in params){
+	// 		paramsStr += `${key}=${params[key]}&`
+	// 	}
+	// 	paramsStr = paramsStr.slice(0,paramsStr.length - 1)
+	// 	this.setData({
+	// 		path: options.path,
+	// 		params: options.params,
+	// 		paramsStr: paramsStr
+	// 	})
+	// 	return false
+	// }
     if (options.share_code == '' || options.share_code == undefined) {
       that.setData({
         share_code: ''
@@ -54,11 +70,35 @@ Page({
     // });
     if (common.get_userinfo()) {
       setTimeout(function () {
-        wx.switchTab({
-          url: '/pages/index/index'
-        })
+		  that.goNext()
       }, 400)
     }
+  },
+  goNext: function(){
+	  // if(this.data.path && this.data.params){
+	  // 	wx.redirectTo({
+	  // 		url: `/${this.data.path}${this.data.paramsStr}`
+	  // 	})
+	  // }else{
+	  	// wx.switchTab({
+	  	  // url: '/pages/index/index'
+	  	// })
+	  // }
+	  let scenario = wx.getStorageSync("scenario")
+	  if (scenario.scene == 1011) {
+	    var msg = '',router = scenario.path
+	    for(var i in scenario.query){
+	      msg += i + '=' + scenario.query[i] + '&'
+	    }
+	    msg = msg.substr(0, msg.length - 1);
+	    wx.redirectTo({
+	      url: '/' + router + "?" + msg,
+	    })
+	  }else{
+	    wx.switchTab({
+	      url: '/pages/index/index'
+	    })
+	  }
   },
   bindGetUserInfo: function (e) {
     var wxUserinfo = e.detail.userInfo
@@ -69,9 +109,7 @@ Page({
       getApp().getOpenid(share_code, wxUserinfo);
       wx.setStorageSync('flag', true)
     } else {
-      wx.switchTab({
-        url: '/pages/index/index'
-      })
+		this.goNext()
       // wx.showModal({
       //   title: '警告',
       //   content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',

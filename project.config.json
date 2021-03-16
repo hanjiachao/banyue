@@ -82,6 +82,13 @@
         {
           "name": "pages/myCourses/myCourses",
           "pathName": "pages/myCourses/myCourses",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/courseDetails/courseDetails",
+          "pathName": "pages/courseDetails/courseDetails",
+          "query": "v_id=294&text=免费",
           "scene": null
         }
       ]
