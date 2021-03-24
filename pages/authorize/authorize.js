@@ -69,9 +69,9 @@ Page({
     //   }
     // });
     if (common.get_userinfo()) {
-      setTimeout(function () {
+      // setTimeout(function () {
 		  that.goNext()
-      }, 400)
+      // }, 400)
     }
   },
   goNext: function(){
@@ -85,8 +85,15 @@ Page({
 	  	// })
 	  // }
 	  let scenario = wx.getStorageSync("scenario")
-	  if (scenario.scene == 1011) {
+	  console.log(scenario)
+	  if (scenario && scenario.scene == 1011) {
 	    var msg = '',router = scenario.path
+		if(router == 'pages/authorize/authorize'){
+			wx.switchTab({
+			  url: '/pages/index/index'
+			})
+			return false
+		}
 	    for(var i in scenario.query){
 	      msg += i + '=' + scenario.query[i] + '&'
 	    }
@@ -108,7 +115,9 @@ Page({
       var that = this;
       getApp().getOpenid(share_code, wxUserinfo);
       wx.setStorageSync('flag', true)
+	  console.log('if')
     } else {
+		console.log('else')
 		this.goNext()
       // wx.showModal({
       //   title: '警告',
